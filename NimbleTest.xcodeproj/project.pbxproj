@@ -22,6 +22,7 @@
 		852A16F92AF5BD700026FA4A /* LoginSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852A16F82AF5BD700026FA4A /* LoginSuccess.swift */; };
 		852A16FC2AF5BE1C0026FA4A /* LoginError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852A16FB2AF5BE1C0026FA4A /* LoginError.swift */; };
 		852A16FE2AF5BE800026FA4A /* LoginEnumError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852A16FD2AF5BE800026FA4A /* LoginEnumError.swift */; };
+		852A17032AF5BFBA0026FA4A /* HTTPSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852A17022AF5BFBA0026FA4A /* HTTPSessionProtocol.swift */; };
 		DDED70590E3EB4264E1D8B63 /* Pods_NimbleTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63898B4B08A80B4C438A9658 /* Pods_NimbleTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		852A16F82AF5BD700026FA4A /* LoginSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSuccess.swift; sourceTree = "<group>"; };
 		852A16FB2AF5BE1C0026FA4A /* LoginError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginError.swift; sourceTree = "<group>"; };
 		852A16FD2AF5BE800026FA4A /* LoginEnumError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEnumError.swift; sourceTree = "<group>"; };
+		852A17022AF5BFBA0026FA4A /* HTTPSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPSessionProtocol.swift; sourceTree = "<group>"; };
 		9FD0DC2F9509BB670291D5ED /* Pods-NimbleTest-NimbleTestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleTest-NimbleTestUITests.debug.xcconfig"; path = "Target Support Files/Pods-NimbleTest-NimbleTestUITests/Pods-NimbleTest-NimbleTestUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AD4C3BFA635D733C363174B7 /* Pods-NimbleTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleTestTests.release.xcconfig"; path = "Target Support Files/Pods-NimbleTestTests/Pods-NimbleTestTests.release.xcconfig"; sourceTree = "<group>"; };
 		B1EE276A13CCC4607315A0E1 /* Pods-NimbleTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleTest.debug.xcconfig"; path = "Target Support Files/Pods-NimbleTest/Pods-NimbleTest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -190,6 +192,8 @@
 		852A16EC2AF5B60F0026FA4A /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				852A17012AF5BF890026FA4A /* Services */,
+				852A17002AF5BF7B0026FA4A /* Repositories */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -268,6 +272,21 @@
 				852A16F62AF5BA130026FA4A /* LoginUseCase.swift */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		852A17002AF5BF7B0026FA4A /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		852A17012AF5BF890026FA4A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				852A17022AF5BFBA0026FA4A /* HTTPSessionProtocol.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		F3046CA6F2CDDAEA70E66F98 /* Pods */ = {
@@ -486,6 +505,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				852A16BE2AF5AFD10026FA4A /* ViewController.swift in Sources */,
+				852A17032AF5BFBA0026FA4A /* HTTPSessionProtocol.swift in Sources */,
 				852A16BA2AF5AFD10026FA4A /* AppDelegate.swift in Sources */,
 				852A16BC2AF5AFD10026FA4A /* SceneDelegate.swift in Sources */,
 				852A16F92AF5BD700026FA4A /* LoginSuccess.swift in Sources */,
