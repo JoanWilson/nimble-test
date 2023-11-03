@@ -17,6 +17,11 @@
 		852A16D12AF5AFD30026FA4A /* NimbleTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852A16D02AF5AFD30026FA4A /* NimbleTestTests.swift */; };
 		852A16DB2AF5AFD30026FA4A /* NimbleTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852A16DA2AF5AFD30026FA4A /* NimbleTestUITests.swift */; };
 		852A16DD2AF5AFD30026FA4A /* NimbleTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852A16DC2AF5AFD30026FA4A /* NimbleTestUITestsLaunchTests.swift */; };
+		852A16F32AF5B9420026FA4A /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852A16F22AF5B9420026FA4A /* LoginRequest.swift */; };
+		852A16F72AF5BA130026FA4A /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852A16F62AF5BA130026FA4A /* LoginUseCase.swift */; };
+		852A16F92AF5BD700026FA4A /* LoginSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852A16F82AF5BD700026FA4A /* LoginSuccess.swift */; };
+		852A16FC2AF5BE1C0026FA4A /* LoginError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852A16FB2AF5BE1C0026FA4A /* LoginError.swift */; };
+		852A16FE2AF5BE800026FA4A /* LoginEnumError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852A16FD2AF5BE800026FA4A /* LoginEnumError.swift */; };
 		DDED70590E3EB4264E1D8B63 /* Pods_NimbleTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63898B4B08A80B4C438A9658 /* Pods_NimbleTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +58,11 @@
 		852A16D62AF5AFD30026FA4A /* NimbleTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NimbleTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		852A16DA2AF5AFD30026FA4A /* NimbleTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NimbleTestUITests.swift; sourceTree = "<group>"; };
 		852A16DC2AF5AFD30026FA4A /* NimbleTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NimbleTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		852A16F22AF5B9420026FA4A /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		852A16F62AF5BA130026FA4A /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
+		852A16F82AF5BD700026FA4A /* LoginSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSuccess.swift; sourceTree = "<group>"; };
+		852A16FB2AF5BE1C0026FA4A /* LoginError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginError.swift; sourceTree = "<group>"; };
+		852A16FD2AF5BE800026FA4A /* LoginEnumError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEnumError.swift; sourceTree = "<group>"; };
 		9FD0DC2F9509BB670291D5ED /* Pods-NimbleTest-NimbleTestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleTest-NimbleTestUITests.debug.xcconfig"; path = "Target Support Files/Pods-NimbleTest-NimbleTestUITests/Pods-NimbleTest-NimbleTestUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AD4C3BFA635D733C363174B7 /* Pods-NimbleTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleTestTests.release.xcconfig"; path = "Target Support Files/Pods-NimbleTestTests/Pods-NimbleTestTests.release.xcconfig"; sourceTree = "<group>"; };
 		B1EE276A13CCC4607315A0E1 /* Pods-NimbleTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleTest.debug.xcconfig"; path = "Target Support Files/Pods-NimbleTest/Pods-NimbleTest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -171,6 +181,8 @@
 		852A16EB2AF5B60A0026FA4A /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				852A16F52AF5BA080026FA4A /* UseCases */,
+				852A16F42AF5BA010026FA4A /* Entities */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -221,6 +233,33 @@
 				852A16EA2AF5B6030026FA4A /* Presentation */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		852A16F42AF5BA010026FA4A /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				852A16FA2AF5BE040026FA4A /* Login */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		852A16F52AF5BA080026FA4A /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				852A16F62AF5BA130026FA4A /* LoginUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		852A16FA2AF5BE040026FA4A /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				852A16F22AF5B9420026FA4A /* LoginRequest.swift */,
+				852A16F82AF5BD700026FA4A /* LoginSuccess.swift */,
+				852A16FB2AF5BE1C0026FA4A /* LoginError.swift */,
+				852A16FD2AF5BE800026FA4A /* LoginEnumError.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		F3046CA6F2CDDAEA70E66F98 /* Pods */ = {
@@ -441,6 +480,11 @@
 				852A16BE2AF5AFD10026FA4A /* ViewController.swift in Sources */,
 				852A16BA2AF5AFD10026FA4A /* AppDelegate.swift in Sources */,
 				852A16BC2AF5AFD10026FA4A /* SceneDelegate.swift in Sources */,
+				852A16F92AF5BD700026FA4A /* LoginSuccess.swift in Sources */,
+				852A16F32AF5B9420026FA4A /* LoginRequest.swift in Sources */,
+				852A16F72AF5BA130026FA4A /* LoginUseCase.swift in Sources */,
+				852A16FC2AF5BE1C0026FA4A /* LoginError.swift in Sources */,
+				852A16FE2AF5BE800026FA4A /* LoginEnumError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
