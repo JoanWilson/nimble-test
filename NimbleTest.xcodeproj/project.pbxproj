@@ -124,11 +124,10 @@
 		852A16B82AF5AFD10026FA4A /* NimbleTest */ = {
 			isa = PBXGroup;
 			children = (
-				852A16B92AF5AFD10026FA4A /* AppDelegate.swift */,
-				852A16BB2AF5AFD10026FA4A /* SceneDelegate.swift */,
+				852A16F12AF5B6830026FA4A /* Source */,
+				852A16EE2AF5B6220026FA4A /* Resources */,
+				852A16E92AF5B5F90026FA4A /* Application */,
 				852A16BD2AF5AFD10026FA4A /* ViewController.swift */,
-				852A16C22AF5AFD30026FA4A /* Assets.xcassets */,
-				852A16C42AF5AFD30026FA4A /* LaunchScreen.storyboard */,
 				852A16C72AF5AFD30026FA4A /* Info.plist */,
 			);
 			path = NimbleTest;
@@ -149,6 +148,79 @@
 				852A16DC2AF5AFD30026FA4A /* NimbleTestUITestsLaunchTests.swift */,
 			);
 			path = NimbleTestUITests;
+			sourceTree = "<group>";
+		};
+		852A16E92AF5B5F90026FA4A /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				852A16F02AF5B64F0026FA4A /* Variables */,
+				852A16B92AF5AFD10026FA4A /* AppDelegate.swift */,
+				852A16BB2AF5AFD10026FA4A /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		852A16EA2AF5B6030026FA4A /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				852A16ED2AF5B61A0026FA4A /* LaunchScreen */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		852A16EB2AF5B60A0026FA4A /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		852A16EC2AF5B60F0026FA4A /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		852A16ED2AF5B61A0026FA4A /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				852A16C42AF5AFD30026FA4A /* LaunchScreen.storyboard */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		852A16EE2AF5B6220026FA4A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				852A16EF2AF5B63C0026FA4A /* Assets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		852A16EF2AF5B63C0026FA4A /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				852A16C22AF5AFD30026FA4A /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		852A16F02AF5B64F0026FA4A /* Variables */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Variables;
+			sourceTree = "<group>";
+		};
+		852A16F12AF5B6830026FA4A /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				852A16EB2AF5B60A0026FA4A /* Domain */,
+				852A16EC2AF5B60F0026FA4A /* Data */,
+				852A16EA2AF5B6030026FA4A /* Presentation */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 		F3046CA6F2CDDAEA70E66F98 /* Pods */ = {
