@@ -246,7 +246,7 @@
 		852A16F52AF5BA080026FA4A /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				852A16F62AF5BA130026FA4A /* LoginUseCase.swift */,
+				852A16FF2AF5BF200026FA4A /* Authentication */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -260,6 +260,14 @@
 				852A16FD2AF5BE800026FA4A /* LoginEnumError.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		852A16FF2AF5BF200026FA4A /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				852A16F62AF5BA130026FA4A /* LoginUseCase.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		F3046CA6F2CDDAEA70E66F98 /* Pods */ = {
