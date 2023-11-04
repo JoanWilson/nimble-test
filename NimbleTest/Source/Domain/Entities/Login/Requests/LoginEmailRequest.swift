@@ -1,6 +1,6 @@
 import Foundation
 
-struct LoginRequest: Codable {
+struct LoginEmailRequest: Codable {
     let grantType, email, password, clientID: String
     let clientSecret: String
     

@@ -1,10 +1,18 @@
 import Foundation
+import Combine
 
-protocol LoginViewModelProtocol: AnyObject {
+protocol LoginViewModelProtocol: ObservableObject {
+    var authenticationSuccess: Bool { get }
+    var errorMessage: String? { get }
     func login(email: String, password: String) async -> Bool
 }
 
-public final class LoginViewModel {
+public final class LoginViewModel: LoginViewModelProtocol {
+    @Published internal var authenticationSuccess: Bool = false
+    @Published internal var errorMessage: String? = nil
+    
+    internal var cancellable: Set<AnyCancellable> = []
+    
     private let useCase: LoginUseCase
     
     init(useCase: LoginUseCase) {
@@ -17,7 +25,7 @@ public final class LoginViewModel {
             print("Error while getting api keys")
             return false
         }
-        let loginRequest = LoginRequest(grantType: "password",
+        let loginRequest = LoginEmailRequest(grantType: "password",
                                         email: email,
                                         password: password, 
                                         clientID: clientId,
@@ -27,10 +35,13 @@ public final class LoginViewModel {
             let result = try await useCase.login(for: loginRequest)
             switch result {
             case .success(let success):
+                authenticationSuccess = true
                 print(success)
                 return true
             case .failure(let error):
                 print(error.errors.first?.detail ?? "Unknown error")
+                authenticationSuccess = false
+                errorMessage = error.errors.first?.detail
                 return false
             }
         } catch {
@@ -38,8 +49,4 @@ public final class LoginViewModel {
             return false
         }
     }
-}
-
-extension LoginViewModel: LoginViewModelProtocol {
-    
 }

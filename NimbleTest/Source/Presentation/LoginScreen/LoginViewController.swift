@@ -2,9 +2,9 @@ import UIKit
 
 public final class LoginViewController: UIViewController {
     private let contentView = LoginView()
-    private let viewModel: LoginViewModelProtocol
+    private let viewModel: LoginViewModel
     
-    init(viewModel: LoginViewModelProtocol) {
+    init(viewModel: LoginViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -22,6 +22,44 @@ public final class LoginViewController: UIViewController {
         setupKeyboardHiding()
         hideKeyboardWhenTappedAround()
         setupLoginButton()
+        addBinders()
+    }
+    
+    private func addBinders() {
+        addAuthenticationBinder()
+        addErrorMessageBinder()
+    }
+    
+    private func addAuthenticationBinder() {
+        viewModel.$authenticationSuccess.sink { isLogged in
+            if isLogged {
+                DispatchQueue.main.async {
+                    self.navigateToSurveyList()
+                }
+            }
+        }.store(in: &viewModel.cancellable)
+    }
+    
+    private func addErrorMessageBinder() {
+        viewModel.$errorMessage.sink { message in
+            if let message = message {
+                DispatchQueue.main.async {
+                    self.showErrorMessageAlert(message)
+                }
+            }
+        }.store(in: &viewModel.cancellable)
+    }
+    
+    private func navigateToSurveyList() {
+        let surveyListViewController = SurveyListViewController()
+        navigationController?.pushViewController(surveyListViewController, 
+                                                 animated: true)
+    }
+    
+    private func showErrorMessageAlert(_ message: String) {
+        let alert = UIAlertController(title: "Login Error", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
