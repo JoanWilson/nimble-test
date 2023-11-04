@@ -37,7 +37,7 @@ extension LoginViewController {
                 print("Nulo")
                 return
             }
-            let result = try await login(email: email, password: password)
+            let result = await login(email: email, password: password)
             print(result)
         }
     }
