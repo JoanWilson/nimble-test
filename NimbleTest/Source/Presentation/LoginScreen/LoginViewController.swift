@@ -4,6 +4,14 @@ public final class LoginViewController: UIViewController {
     private let contentView = LoginView()
     private let viewModel: LoginViewModelProtocol
     
+    init(viewModel: LoginViewModelProtocol) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    @available(*, unavailable)
+    required init?(coder: NSCoder) { nil }
+    
     public override func loadView() {
         super.loadView()
         view = contentView
