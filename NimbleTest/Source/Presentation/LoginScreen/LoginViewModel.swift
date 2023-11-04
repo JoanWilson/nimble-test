@@ -22,12 +22,19 @@ public final class LoginViewModel {
                                         password: password, 
                                         clientID: clientId,
                                         clientSecret: clientSecret)
+        
         do {
-            let response = try await useCase.login(for: loginRequest)
-            print(response)
-            return true
-        } catch let error {
-            
+            let result = try await useCase.login(for: loginRequest)
+            switch result {
+            case .success(let success):
+                print(success)
+                return true
+            case .failure(let error):
+                print(error.errors.first?.detail ?? "Unknown error")
+                return false
+            }
+        } catch {
+            print(error.localizedDescription)
             return false
         }
     }

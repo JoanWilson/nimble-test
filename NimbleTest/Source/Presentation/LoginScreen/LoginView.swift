@@ -50,8 +50,8 @@ public final class LoginView: UIView {
         button.backgroundColor = .white
         button.tintColor = .black
         button.setTitle("Log in", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 17, weight: .semibold)
         button.layer.cornerRadius = 10
+        button.titleLabel?.font = .systemFont(ofSize: 17, weight: .semibold)
         
         return button
     }()

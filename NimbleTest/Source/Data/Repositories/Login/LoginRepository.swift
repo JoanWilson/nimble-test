@@ -11,37 +11,35 @@ public final class LoginRepository: LoginUseCase {
         self.session = session
     }
     
-    func login(for login: LoginRequest) async throws -> LoginSuccess {
-        let endpoint = LoginEndpoint.token
+    func login(for login: LoginRequest) async throws -> Result<LoginSuccess, LoginError> {
+        let endpoint = APIEndpoint.token
         let url = endpoint.url(for: baseURL)
         var request = URLRequest(url: url)
         
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-type")
         
-        let postData = try! JSONEncoder().encode(login)
-
+        let postData = try JSONEncoder().encode(login)
         request.httpBody = postData
-        print(postData)
         
         let (data, response) = try await session.data(for: request)
-        
-        if response.statusCode > 300 {
-            let result = try JSONDecoder().decode(LoginError.self, from: data)
-            let result2 = try JSONDecoder().decode(LoginSuccess.self, from: mapLoginResponse(response: (data, response)))
-            
-            print(result)
-            return result2
-        } else {
-            let result = try JSONDecoder().decode(LoginSuccess.self, from: mapLoginResponse(response: (data, response)))
-            
-            return result
+        let result = try loginHandler(response: (data, response))
+        return result
+    }
+    
+    private func loginHandler(response: (data: Data, response: URLResponse)) throws -> Result<LoginSuccess, LoginError> {
+        guard let httpResponse = response.response as? HTTPURLResponse else {
+            throw LoginEnumError.noResponse
         }
         
-        //
-        //        let result = try JSONDecoder().decode(LoginSuccess.self, from: mapLoginResponse(response: (data, response)))
-        //
-        //        eturn result
+        switch httpResponse.statusCode {
+        case 200..<300:
+            let loginSuccess = try JSONDecoder().decode(LoginSuccess.self, from: response.data)
+            return .success(loginSuccess)
+        default:
+            let loginError = try JSONDecoder().decode(LoginError.self, from: response.data)
+            return .failure(loginError)
+        }
     }
     
 }

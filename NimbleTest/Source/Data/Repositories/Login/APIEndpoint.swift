@@ -1,6 +1,6 @@
 import Foundation
 
-enum LoginEndpoint: String {
+enum APIEndpoint: String {
     case token = "/api/v1/oauth/token"
     case revoke = "/api/v1/oauth/revoke"
     case passwords = "/api/v1/passwords"
@@ -10,4 +10,4 @@ enum LoginEndpoint: String {
     }
 }
 
-extension LoginEndpoint: CaseIterable {}
+extension APIEndpoint: CaseIterable {}

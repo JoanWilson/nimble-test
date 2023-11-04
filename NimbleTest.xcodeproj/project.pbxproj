@@ -23,7 +23,7 @@
 		852A16FE2AF5BE800026FA4A /* LoginEnumError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852A16FD2AF5BE800026FA4A /* LoginEnumError.swift */; };
 		852A17032AF5BFBA0026FA4A /* HTTPSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852A17022AF5BFBA0026FA4A /* HTTPSessionProtocol.swift */; };
 		852A17052AF5C0750026FA4A /* LoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852A17042AF5C0750026FA4A /* LoginRepository.swift */; };
-		852A17082AF5C1B60026FA4A /* LoginEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852A17072AF5C1B60026FA4A /* LoginEndpoint.swift */; };
+		852A17082AF5C1B60026FA4A /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852A17072AF5C1B60026FA4A /* APIEndpoint.swift */; };
 		852A170D2AF5D8740026FA4A /* LoginRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852A170C2AF5D8740026FA4A /* LoginRepositoryTests.swift */; };
 		852A17102AF5D8C80026FA4A /* MockSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852A170F2AF5D8C80026FA4A /* MockSession.swift */; };
 		852A17142AF5DB090026FA4A /* token.json in Resources */ = {isa = PBXBuildFile; fileRef = 852A17132AF5DB090026FA4A /* token.json */; };
@@ -79,7 +79,7 @@
 		852A16FD2AF5BE800026FA4A /* LoginEnumError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEnumError.swift; sourceTree = "<group>"; };
 		852A17022AF5BFBA0026FA4A /* HTTPSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPSessionProtocol.swift; sourceTree = "<group>"; };
 		852A17042AF5C0750026FA4A /* LoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepository.swift; sourceTree = "<group>"; };
-		852A17072AF5C1B60026FA4A /* LoginEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEndpoint.swift; sourceTree = "<group>"; };
+		852A17072AF5C1B60026FA4A /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
 		852A17092AF5C7370026FA4A /* APIConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = APIConfig.xcconfig; sourceTree = "<group>"; };
 		852A170A2AF5C7950026FA4A /* APIConfigExample.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = APIConfigExample.xcconfig; sourceTree = "<group>"; };
 		852A170C2AF5D8740026FA4A /* LoginRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepositoryTests.swift; sourceTree = "<group>"; };
@@ -328,7 +328,7 @@
 			isa = PBXGroup;
 			children = (
 				852A17042AF5C0750026FA4A /* LoginRepository.swift */,
-				852A17072AF5C1B60026FA4A /* LoginEndpoint.swift */,
+				852A17072AF5C1B60026FA4A /* APIEndpoint.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -631,7 +631,7 @@
 				852A16BC2AF5AFD10026FA4A /* SceneDelegate.swift in Sources */,
 				852A16F92AF5BD700026FA4A /* LoginSuccess.swift in Sources */,
 				852A172F2AF60B150026FA4A /* LoginFactory.swift in Sources */,
-				852A17082AF5C1B60026FA4A /* LoginEndpoint.swift in Sources */,
+				852A17082AF5C1B60026FA4A /* APIEndpoint.swift in Sources */,
 				852A17202AF5E1FA0026FA4A /* ViewCoding+.swift in Sources */,
 				852A17242AF5ED4C0026FA4A /* UIWindow+.swift in Sources */,
 				852A17052AF5C0750026FA4A /* LoginRepository.swift in Sources */,
