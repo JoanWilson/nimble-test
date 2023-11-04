@@ -1,0 +1,16 @@
+//
+//  APIConfigExample.xcconfig
+//  NimbleTest
+//
+//  Created by Joan Wilson Oliveira on 03/11/23.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+//
+// Please the app needs a APIConfig instead APIConfigExample, remove
+// "Example" word from the file name and add the client keys bellow.
+// This method is needed to keep the client keys secure
+//
+CLIENT_ID = "Write your clientId here"
+CLIENT_SECRET = "Write your client secret here"
