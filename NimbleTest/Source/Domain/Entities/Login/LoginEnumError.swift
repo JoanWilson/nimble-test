@@ -18,7 +18,7 @@ func mapLoginResponse(response: (data: Data, response: URLResponse)) throws -> D
     case 400:
         throw LoginEnumError.invalidEmailOrPassword
     case 403:
-        throw LoginEnumError.invalidClient
+        return response.data
     default:
         throw LoginEnumError.http(httpResponse: httpResponse, data: response.data)
     }

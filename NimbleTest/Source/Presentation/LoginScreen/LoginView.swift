@@ -20,18 +20,20 @@ public final class LoginView: UIView {
         return imageView
     }()
     
-    private lazy var loginTextField: UITextField = {
+    internal lazy var loginTextField: UITextField = {
         let textField = TextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.backgroundColor = UIColor(named: "Colors/FieldBackground")
         textField.layer.cornerRadius = 10
         textField.placeholder = "Email"
         textField.keyboardType = .emailAddress
+        textField.autocorrectionType = .no
+        textField.autocapitalizationType = .none
         
         return textField
     }()
     
-    private lazy var passwordTextField: UITextField = {
+    internal lazy var passwordTextField: UITextField = {
         let textField = TextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.backgroundColor = UIColor(named: "Colors/FieldBackground")
@@ -42,7 +44,7 @@ public final class LoginView: UIView {
         return textField
     }()
     
-    private lazy var logInButton: UIButton = {
+    internal lazy var logInButton: UIButton = {
         let button = UIButton(type: .roundedRect)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .white

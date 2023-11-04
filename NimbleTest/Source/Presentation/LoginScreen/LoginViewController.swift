@@ -21,15 +21,39 @@ public final class LoginViewController: UIViewController {
         super.viewDidLoad()
         setupKeyboardHiding()
         hideKeyboardWhenTappedAround()
-    }
-    
-    private func setupKeyboardHiding() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        setupLoginButton()
     }
 }
 
 extension LoginViewController {
+    private func setupLoginButton() {
+        contentView.logInButton.addTarget(self, action: #selector(didTapLoginButton), for: .touchUpInside)
+    }
+    
+    @objc func didTapLoginButton(_ sender: Any) {
+        Task {
+            guard let email = contentView.loginTextField.text,
+                  let password = contentView.passwordTextField.text else {
+                print("Nulo")
+                return
+            }
+            let result = try await login(email: email, password: password)
+            print(result)
+        }
+    }
+    
+    @objc func login(email: String, password: String) async -> Bool {
+        let response = await viewModel.login(email: email, password: password)
+        return response
+    }
+}
+
+extension LoginViewController {
+    private func setupKeyboardHiding() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
     @objc func keyboardWillShow(sender: NSNotification) {
         if view.frame.origin.y == 0 {
             view.frame.origin.y = view.frame.origin.y - 50
