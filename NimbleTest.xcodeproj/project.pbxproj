@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		4AA684EBBE9F3C9E2F8EDF19 /* Pods_NimbleTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF4DD15C5349475C050DA660 /* Pods_NimbleTestTests.framework */; };
 		80D14D952C86011AF3560818 /* Pods_NimbleTest_NimbleTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2005C3B79FB8DD3A453CA2D /* Pods_NimbleTest_NimbleTestUITests.framework */; };
-		852033AC2AF6DAB300659D09 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852033AB2AF6DAB300659D09 /* Keychain.swift */; };
+		852033AC2AF6DAB300659D09 /* SecureStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852033AB2AF6DAB300659D09 /* SecureStorage.swift */; };
 		852A16BA2AF5AFD10026FA4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852A16B92AF5AFD10026FA4A /* AppDelegate.swift */; };
 		852A16BC2AF5AFD10026FA4A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852A16BB2AF5AFD10026FA4A /* SceneDelegate.swift */; };
 		852A16C32AF5AFD30026FA4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 852A16C22AF5AFD30026FA4A /* Assets.xcassets */; };
@@ -64,7 +64,7 @@
 		3A77F4F1D79AA1DCCDEFE972 /* Pods-NimbleTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleTest.release.xcconfig"; path = "Target Support Files/Pods-NimbleTest/Pods-NimbleTest.release.xcconfig"; sourceTree = "<group>"; };
 		63898B4B08A80B4C438A9658 /* Pods_NimbleTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NimbleTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FABED4AF947AAEEFAFDD708 /* Pods-NimbleTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleTestTests.debug.xcconfig"; path = "Target Support Files/Pods-NimbleTestTests/Pods-NimbleTestTests.debug.xcconfig"; sourceTree = "<group>"; };
-		852033AB2AF6DAB300659D09 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		852033AB2AF6DAB300659D09 /* SecureStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorage.swift; sourceTree = "<group>"; };
 		852A16B62AF5AFD10026FA4A /* NimbleTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NimbleTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		852A16B92AF5AFD10026FA4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		852A16BB2AF5AFD10026FA4A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -335,7 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				852A17022AF5BFBA0026FA4A /* HTTPSessionProtocol.swift */,
-				852033AB2AF6DAB300659D09 /* Keychain.swift */,
+				852033AB2AF6DAB300659D09 /* SecureStorage.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -706,7 +706,7 @@
 				852A16F72AF5BA130026FA4A /* LoginUseCase.swift in Sources */,
 				852A16FC2AF5BE1C0026FA4A /* LoginError.swift in Sources */,
 				852A16FE2AF5BE800026FA4A /* LoginEnumError.swift in Sources */,
-				852033AC2AF6DAB300659D09 /* Keychain.swift in Sources */,
+				852033AC2AF6DAB300659D09 /* SecureStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -794,7 +794,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -858,7 +858,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
