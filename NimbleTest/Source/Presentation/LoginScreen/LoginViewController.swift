@@ -2,6 +2,7 @@ import UIKit
 
 public final class LoginViewController: UIViewController {
     private let contentView = LoginView()
+    private let viewModel: LoginViewModelProtocol
     
     public override func loadView() {
         super.loadView()
@@ -10,7 +11,8 @@ public final class LoginViewController: UIViewController {
 
     public override func viewDidLoad() {
         super.viewDidLoad()
-//        setupKeyboardHiding()
+        setupKeyboardHiding()
+        hideKeyboardWhenTappedAround()
     }
     
     private func setupKeyboardHiding() {
