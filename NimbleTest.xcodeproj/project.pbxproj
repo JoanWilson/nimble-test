@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4AA684EBBE9F3C9E2F8EDF19 /* Pods_NimbleTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF4DD15C5349475C050DA660 /* Pods_NimbleTestTests.framework */; };
 		80D14D952C86011AF3560818 /* Pods_NimbleTest_NimbleTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2005C3B79FB8DD3A453CA2D /* Pods_NimbleTest_NimbleTestUITests.framework */; };
+		852033AC2AF6DAB300659D09 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852033AB2AF6DAB300659D09 /* Keychain.swift */; };
 		852A16BA2AF5AFD10026FA4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852A16B92AF5AFD10026FA4A /* AppDelegate.swift */; };
 		852A16BC2AF5AFD10026FA4A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852A16BB2AF5AFD10026FA4A /* SceneDelegate.swift */; };
 		852A16C32AF5AFD30026FA4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 852A16C22AF5AFD30026FA4A /* Assets.xcassets */; };
@@ -63,6 +64,7 @@
 		3A77F4F1D79AA1DCCDEFE972 /* Pods-NimbleTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleTest.release.xcconfig"; path = "Target Support Files/Pods-NimbleTest/Pods-NimbleTest.release.xcconfig"; sourceTree = "<group>"; };
 		63898B4B08A80B4C438A9658 /* Pods_NimbleTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NimbleTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FABED4AF947AAEEFAFDD708 /* Pods-NimbleTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleTestTests.debug.xcconfig"; path = "Target Support Files/Pods-NimbleTestTests/Pods-NimbleTestTests.debug.xcconfig"; sourceTree = "<group>"; };
+		852033AB2AF6DAB300659D09 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		852A16B62AF5AFD10026FA4A /* NimbleTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NimbleTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		852A16B92AF5AFD10026FA4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		852A16BB2AF5AFD10026FA4A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -143,6 +145,13 @@
 				EF4DD15C5349475C050DA660 /* Pods_NimbleTestTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		852033AA2AF6DA5D00659D09 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Local;
 			sourceTree = "<group>";
 		};
 		852A16AD2AF5AFD10026FA4A = {
@@ -316,6 +325,7 @@
 		852A17002AF5BF7B0026FA4A /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				852033AA2AF6DA5D00659D09 /* Local */,
 				852A17062AF5C19C0026FA4A /* Login */,
 			);
 			path = Repositories;
@@ -325,6 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				852A17022AF5BFBA0026FA4A /* HTTPSessionProtocol.swift */,
+				852033AB2AF6DAB300659D09 /* Keychain.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -445,6 +456,7 @@
 				852A16B22AF5AFD10026FA4A /* Sources */,
 				852A16B32AF5AFD10026FA4A /* Frameworks */,
 				852A16B42AF5AFD10026FA4A /* Resources */,
+				46929C16A1F3A87C175D1482 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -482,6 +494,7 @@
 				852A16D22AF5AFD30026FA4A /* Sources */,
 				852A16D32AF5AFD30026FA4A /* Frameworks */,
 				852A16D42AF5AFD30026FA4A /* Resources */,
+				9AF1CA00DA25679D9D518C5B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -588,6 +601,40 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		46929C16A1F3A87C175D1482 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NimbleTest/Pods-NimbleTest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NimbleTest/Pods-NimbleTest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NimbleTest/Pods-NimbleTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9AF1CA00DA25679D9D518C5B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NimbleTest-NimbleTestUITests/Pods-NimbleTest-NimbleTestUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NimbleTest-NimbleTestUITests/Pods-NimbleTest-NimbleTestUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NimbleTest-NimbleTestUITests/Pods-NimbleTest-NimbleTestUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A75D73429B0479A75DF1BE69 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -659,6 +706,7 @@
 				852A16F72AF5BA130026FA4A /* LoginUseCase.swift in Sources */,
 				852A16FC2AF5BE1C0026FA4A /* LoginError.swift in Sources */,
 				852A16FE2AF5BE800026FA4A /* LoginEnumError.swift in Sources */,
+				852033AC2AF6DAB300659D09 /* Keychain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
