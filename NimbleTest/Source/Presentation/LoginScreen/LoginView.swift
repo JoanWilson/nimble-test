@@ -29,6 +29,7 @@ public final class LoginView: UIView {
         textField.keyboardType = .emailAddress
         textField.autocorrectionType = .no
         textField.autocapitalizationType = .none
+        textField.font = .systemFont(ofSize: 17)
         
         return textField
     }()
@@ -40,6 +41,7 @@ public final class LoginView: UIView {
         textField.layer.cornerRadius = 10
         textField.placeholder = "Password"
         textField.isSecureTextEntry = true
+        textField.font = .systemFont(ofSize: 17)
  
         return textField
     }()
@@ -52,6 +54,16 @@ public final class LoginView: UIView {
         button.setTitle("Log in", for: .normal)
         button.layer.cornerRadius = 10
         button.titleLabel?.font = .systemFont(ofSize: 17, weight: .semibold)
+        
+        return button
+    }()
+    
+    internal lazy var forgotButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = .clear
+        button.tintColor = .systemGray
+        button.setTitle("Forgot?", for: .normal)
         
         return button
     }()
@@ -71,6 +83,7 @@ extension LoginView: ViewCoding {
         addSubview(loginTextField)
         addSubview(passwordTextField)
         addSubview(logInButton)
+        addSubview(forgotButton)
     }
     
     func setupConstraints() {
@@ -79,6 +92,7 @@ extension LoginView: ViewCoding {
         loginTextFieldConstraints()
         passwordTextFieldConstraints()
         logInButtonConstraints()
+        forgotButtonConstraints()
     }
     
     private func imageBackgroundConstraints() {
@@ -127,6 +141,13 @@ extension LoginView: ViewCoding {
             logInButton.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0.07),
             logInButton.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width * 0.9),
             logInButton.centerXAnchor.constraint(equalTo: centerXAnchor)
+        ])
+    }
+    
+    private func forgotButtonConstraints() {
+        NSLayoutConstraint.activate([
+            forgotButton.centerYAnchor.constraint(equalTo: passwordTextField.centerYAnchor),
+            forgotButton.trailingAnchor.constraint(equalTo: passwordTextField.trailingAnchor, constant: -17),
         ])
     }
 }
