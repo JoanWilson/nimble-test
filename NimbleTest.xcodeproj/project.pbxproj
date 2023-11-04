@@ -32,6 +32,10 @@
 		852A17192AF5DEA30026FA4A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852A17182AF5DEA30026FA4A /* LoginViewModel.swift */; };
 		852A171B2AF5DEAA0026FA4A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852A171A2AF5DEAA0026FA4A /* LoginView.swift */; };
 		852A17202AF5E1FA0026FA4A /* ViewCoding+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852A171F2AF5E1FA0026FA4A /* ViewCoding+.swift */; };
+		852A17222AF5E47B0026FA4A /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852A17212AF5E47B0026FA4A /* UIView+.swift */; };
+		852A17242AF5ED4C0026FA4A /* UIWindow+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852A17232AF5ED4C0026FA4A /* UIWindow+.swift */; };
+		852A17262AF5ED680026FA4A /* UIScreen+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852A17252AF5ED680026FA4A /* UIScreen+.swift */; };
+		852A17292AF5F45F0026FA4A /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852A17282AF5F45F0026FA4A /* TextField.swift */; };
 		DDED70590E3EB4264E1D8B63 /* Pods_NimbleTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63898B4B08A80B4C438A9658 /* Pods_NimbleTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +89,10 @@
 		852A17182AF5DEA30026FA4A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		852A171A2AF5DEAA0026FA4A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		852A171F2AF5E1FA0026FA4A /* ViewCoding+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewCoding+.swift"; sourceTree = "<group>"; };
+		852A17212AF5E47B0026FA4A /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		852A17232AF5ED4C0026FA4A /* UIWindow+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+.swift"; sourceTree = "<group>"; };
+		852A17252AF5ED680026FA4A /* UIScreen+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+.swift"; sourceTree = "<group>"; };
+		852A17282AF5F45F0026FA4A /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		9FD0DC2F9509BB670291D5ED /* Pods-NimbleTest-NimbleTestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleTest-NimbleTestUITests.debug.xcconfig"; path = "Target Support Files/Pods-NimbleTest-NimbleTestUITests/Pods-NimbleTest-NimbleTestUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AD4C3BFA635D733C363174B7 /* Pods-NimbleTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleTestTests.release.xcconfig"; path = "Target Support Files/Pods-NimbleTestTests/Pods-NimbleTestTests.release.xcconfig"; sourceTree = "<group>"; };
 		B1EE276A13CCC4607315A0E1 /* Pods-NimbleTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleTest.debug.xcconfig"; path = "Target Support Files/Pods-NimbleTest/Pods-NimbleTest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -371,6 +379,7 @@
 		852A171C2AF5E1CF0026FA4A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				852A17272AF5F44E0026FA4A /* Components */,
 				852A171D2AF5E1D50026FA4A /* Extensions */,
 			);
 			path = Utils;
@@ -380,8 +389,19 @@
 			isa = PBXGroup;
 			children = (
 				852A171F2AF5E1FA0026FA4A /* ViewCoding+.swift */,
+				852A17212AF5E47B0026FA4A /* UIView+.swift */,
+				852A17232AF5ED4C0026FA4A /* UIWindow+.swift */,
+				852A17252AF5ED680026FA4A /* UIScreen+.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		852A17272AF5F44E0026FA4A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				852A17282AF5F45F0026FA4A /* TextField.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		F3046CA6F2CDDAEA70E66F98 /* Pods */ = {
@@ -601,6 +621,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				852A17172AF5DE8B0026FA4A /* LoginViewController.swift in Sources */,
+				852A17262AF5ED680026FA4A /* UIScreen+.swift in Sources */,
 				852A16BE2AF5AFD10026FA4A /* ViewController.swift in Sources */,
 				852A17032AF5BFBA0026FA4A /* HTTPSessionProtocol.swift in Sources */,
 				852A16BA2AF5AFD10026FA4A /* AppDelegate.swift in Sources */,
@@ -608,10 +629,13 @@
 				852A16F92AF5BD700026FA4A /* LoginSuccess.swift in Sources */,
 				852A17082AF5C1B60026FA4A /* LoginEndpoint.swift in Sources */,
 				852A17202AF5E1FA0026FA4A /* ViewCoding+.swift in Sources */,
+				852A17242AF5ED4C0026FA4A /* UIWindow+.swift in Sources */,
 				852A17052AF5C0750026FA4A /* LoginRepository.swift in Sources */,
+				852A17292AF5F45F0026FA4A /* TextField.swift in Sources */,
 				852A171B2AF5DEAA0026FA4A /* LoginView.swift in Sources */,
 				852A17192AF5DEA30026FA4A /* LoginViewModel.swift in Sources */,
 				852A16F32AF5B9420026FA4A /* LoginRequest.swift in Sources */,
+				852A17222AF5E47B0026FA4A /* UIView+.swift in Sources */,
 				852A16F72AF5BA130026FA4A /* LoginUseCase.swift in Sources */,
 				852A16FC2AF5BE1C0026FA4A /* LoginError.swift in Sources */,
 				852A16FE2AF5BE800026FA4A /* LoginEnumError.swift in Sources */,
@@ -800,7 +824,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -829,7 +853,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
