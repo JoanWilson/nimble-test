@@ -1,17 +1,22 @@
 import Foundation
 
-struct LoginRequest: Codable {
+struct LoginRequest {
     let grantType: String
     let email: String
     let password: String
-    let clientID: String
-    let clientSecret: String
     
-    enum CodingKeys: String, CodingKey {
-        case grantType = "grant_type"
-        case email
-        case password
-        case clientID = "client_id"
-        case clientSecret = "client_secret"
+    var dictionaryParameters: [String: Any] {
+        guard let clientId = Bundle.main.infoDictionary?["CLIENT_ID"] as? String,
+              let clientSecret = Bundle.main.infoDictionary?["CLIENT_Secret"] as? String else {
+            return [:]
+        }
+        
+        return [
+            "grant_type": "password",
+            "email": email,
+            "password": password,
+            "client_id": clientId,
+            "client_secret": clientSecret
+        ]
     }
 }
