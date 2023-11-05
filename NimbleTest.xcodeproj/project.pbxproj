@@ -43,6 +43,7 @@
 		852A172F2AF60B150026FA4A /* LoginFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852A172E2AF60B150026FA4A /* LoginFactory.swift */; };
 		855862912AF6BA7800F99CDD /* Neuzeit S LT Std Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 855862902AF6BA7800F99CDD /* Neuzeit S LT Std Book.otf */; };
 		855862932AF6BCF100F99CDD /* Neuzeit Grotesk Cond W01 Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 855862922AF6BCF100F99CDD /* Neuzeit Grotesk Cond W01 Black.otf */; };
+		85AE8D282AF72386008A2AD8 /* SurveyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AE8D272AF72386008A2AD8 /* SurveyListView.swift */; };
 		DDED70590E3EB4264E1D8B63 /* Pods_NimbleTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63898B4B08A80B4C438A9658 /* Pods_NimbleTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -107,6 +108,7 @@
 		852A172E2AF60B150026FA4A /* LoginFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFactory.swift; sourceTree = "<group>"; };
 		855862902AF6BA7800F99CDD /* Neuzeit S LT Std Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Neuzeit S LT Std Book.otf"; path = "../../../../../Downloads/Neuzeit S LT Std Book/Neuzeit S LT Std Book.otf"; sourceTree = "<group>"; };
 		855862922AF6BCF100F99CDD /* Neuzeit Grotesk Cond W01 Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Neuzeit Grotesk Cond W01 Black.otf"; path = "../../../../../Downloads/Neuzeit_ff/Neuzeit Grotesk Cond W01 Black.otf"; sourceTree = "<group>"; };
+		85AE8D272AF72386008A2AD8 /* SurveyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyListView.swift; sourceTree = "<group>"; };
 		9FD0DC2F9509BB670291D5ED /* Pods-NimbleTest-NimbleTestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleTest-NimbleTestUITests.debug.xcconfig"; path = "Target Support Files/Pods-NimbleTest-NimbleTestUITests/Pods-NimbleTest-NimbleTestUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AD4C3BFA635D733C363174B7 /* Pods-NimbleTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleTestTests.release.xcconfig"; path = "Target Support Files/Pods-NimbleTestTests/Pods-NimbleTestTests.release.xcconfig"; sourceTree = "<group>"; };
 		B1EE276A13CCC4607315A0E1 /* Pods-NimbleTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleTest.debug.xcconfig"; path = "Target Support Files/Pods-NimbleTest/Pods-NimbleTest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				852033B62AF6E90900659D09 /* SurveyListViewController.swift */,
+				85AE8D272AF72386008A2AD8 /* SurveyListView.swift */,
 			);
 			path = SurveyList;
 			sourceTree = "<group>";
@@ -731,6 +734,7 @@
 				852A172F2AF60B150026FA4A /* LoginFactory.swift in Sources */,
 				852A17082AF5C1B60026FA4A /* APIEndpoint.swift in Sources */,
 				852A17202AF5E1FA0026FA4A /* ViewCoding+.swift in Sources */,
+				85AE8D282AF72386008A2AD8 /* SurveyListView.swift in Sources */,
 				852A17242AF5ED4C0026FA4A /* UIWindow+.swift in Sources */,
 				852A17052AF5C0750026FA4A /* LoginRepository.swift in Sources */,
 				852033B02AF6DF7900659D09 /* LoginEnumData.swift in Sources */,

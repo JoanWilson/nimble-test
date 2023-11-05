@@ -1,8 +1,15 @@
 import UIKit
 
-class SurveyListViewController: UIViewController {
-    override func viewDidLoad() {
+public final class SurveyListViewController: UIViewController {
+    private var contentView = SurveyListView()
+    
+    public override func loadView() {
+        super.loadView()
+        view = contentView
+    }
+    
+    public override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBlue
+        title = "Test"
     }
 }

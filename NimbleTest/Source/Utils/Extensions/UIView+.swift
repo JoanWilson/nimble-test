@@ -14,9 +14,9 @@ extension UIView {
     
     func constraintToSelfView() {
         topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+        leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
     }
     
     func constraintToSafeArea() {
