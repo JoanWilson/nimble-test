@@ -16,7 +16,7 @@ public final class SurveyRepository: SurveyUseCase {
         var request = URLRequest(url: url)
         
         request.httpMethod = "GET"
-        request.addValue("Bearer BLXNfSZoUoUBGr7Z1RHO6ilu_44HcIsK_y7hR-osZmw", forHTTPHeaderField: "Authorization")
+        request.addValue("", forHTTPHeaderField: "Authorization")
         
         let (data, response) = try await session.data(for: request)
         
