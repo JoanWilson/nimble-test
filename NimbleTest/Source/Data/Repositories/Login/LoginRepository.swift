@@ -66,6 +66,21 @@ public final class LoginRepository: LoginUseCase {
             forKey: LoginEnumData.userTokens.rawValue
         )
     }
+    
+    internal func getTokens() -> LoginSuccess? {
+        guard let data = secureStorage.getData(LoginEnumData.userTokens.rawValue) else {
+            print("Not Found in Keychain")
+            return nil
+        }
+        
+        do {
+            let tokens = try JSONDecoder().decode(LoginSuccess.self, from: data)
+            return tokens
+        } catch {
+            print(error.localizedDescription)
+            return nil
+        }
+    }
 }
 
 extension LoginRepository {

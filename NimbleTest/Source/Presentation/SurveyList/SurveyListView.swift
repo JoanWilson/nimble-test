@@ -2,6 +2,38 @@ import UIKit
 
 public final class SurveyListView: UIView {
     
+    private lazy var descriptionTitle: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .systemFont(ofSize: 13, weight: .regular)
+        label.text = "MONDAY, JUNE 15"
+        label.textColor = .white
+        label.textAlignment = .left
+        
+        return label
+    }()
+    
+    private lazy var title: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .systemFont(ofSize: 34, weight: .bold)
+        label.text = "Today"
+        label.textColor = .white
+        
+        return label
+    }()
+    
+    private lazy var userPicture: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(named: "Images/userPic")
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 17
+        
+        return imageView
+    }()
+    
     public lazy var backgroundImage: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -66,6 +98,9 @@ extension SurveyListView: ViewCoding {
         addSubview(detailButton)
         addSubview(surveyTitle)
         addSubview(pageControl)
+        addSubview(title)
+        addSubview(descriptionTitle)
+        addSubview(userPicture)
     }
     
     func setupConstraints() {
@@ -74,6 +109,9 @@ extension SurveyListView: ViewCoding {
         detailButtonConstraints()
         surveyTitleConstraints()
         pageControlConstaints()
+        titleConstraints()
+        descriptionTitleConstraints()
+        userPictureConstraints()
     }
     
     private func backgroundImageConstraints() {
@@ -110,6 +148,29 @@ extension SurveyListView: ViewCoding {
         NSLayoutConstraint.activate([
             pageControl.bottomAnchor.constraint(equalTo: surveyTitle.topAnchor, constant: -8),
             pageControl.leadingAnchor.constraint(equalTo: leadingAnchor, constant: -15),
+        ])
+    }
+    
+    private func titleConstraints() {
+        NSLayoutConstraint.activate([
+            title.leadingAnchor.constraint(equalTo: descriptionTitle.leadingAnchor),
+            title.topAnchor.constraint(equalTo: descriptionTitle.bottomAnchor, constant: 4)
+        ])
+    }
+    
+    private func descriptionTitleConstraints() {
+        NSLayoutConstraint.activate([
+            descriptionTitle.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16),
+            descriptionTitle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20)
+        ])
+    }
+    
+    private func userPictureConstraints() {
+        NSLayoutConstraint.activate([
+            userPicture.heightAnchor.constraint(equalToConstant: 36),
+            userPicture.widthAnchor.constraint(equalToConstant: 36),
+            userPicture.centerYAnchor.constraint(equalTo: title.centerYAnchor),
+            userPicture.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
         ])
     }
 }
