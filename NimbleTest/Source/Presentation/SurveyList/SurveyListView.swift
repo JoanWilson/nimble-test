@@ -2,7 +2,7 @@ import UIKit
 
 public final class SurveyListView: UIView {
     
-    private lazy var backgroundImage: UIImageView = {
+    public lazy var backgroundImage: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(named: "Images/surveyBackground")
