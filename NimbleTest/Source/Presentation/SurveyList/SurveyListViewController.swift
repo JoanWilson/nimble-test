@@ -23,9 +23,15 @@ public final class SurveyListViewController: UIViewController {
         if gesture.state == .ended {
             let translation = gesture.translation(in: self.view)
             if translation.x > 0 {
-               print("A")
+                UIView.transition(with: contentView, duration: 0.5, options: .transitionCrossDissolve, animations: {
+                    self.contentView.surveyTitle.text = "Left"
+                    self.contentView.pageControl.currentPage -= 1
+                }, completion: nil)
             } else {
-                print("b")
+                UIView.transition(with: contentView, duration: 0.5, options: .transitionCrossDissolve, animations: {
+                    self.contentView.surveyTitle.text = "Right"
+                    self.contentView.pageControl.currentPage += 1
+                }, completion: nil)
             }
         }
     }

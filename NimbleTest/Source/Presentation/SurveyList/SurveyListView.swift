@@ -11,7 +11,7 @@ public final class SurveyListView: UIView {
         return imageView
     }()
     
-    private lazy var surveyTitle: UILabel = {
+    public lazy var surveyTitle: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 28, weight: .bold)
@@ -43,7 +43,7 @@ public final class SurveyListView: UIView {
         return button
     }()
     
-    private lazy var pageControl: UIPageControl = {
+    public lazy var pageControl: UIPageControl = {
         let pageControl = UIPageControl()
         pageControl.translatesAutoresizingMaskIntoConstraints = false
         pageControl.currentPage = 0
@@ -85,7 +85,6 @@ extension SurveyListView: ViewCoding {
             surveyTitle.bottomAnchor.constraint(equalTo: detailButton.topAnchor),
             surveyTitle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             surveyTitle.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            surveyTitle.heightAnchor.constraint(equalToConstant: 68)
         ])
     }
     
