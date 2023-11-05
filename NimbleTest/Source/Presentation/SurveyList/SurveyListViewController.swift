@@ -3,7 +3,6 @@ import SwiftUI
 public final class SurveyListViewController: UIViewController {
     private var contentView = SurveyListView()
     private var repository = SurveyRepository(session: .shared)
-    private var titleView = UIHostingController(rootView: TitleView(dayTitle: "Today", descriptiveTitle: "MONDAY, JUNE 15", userPicture: UIImage(named: "Images/userPic")!))
     
     public override func loadView() {
         super.loadView()
