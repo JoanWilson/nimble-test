@@ -1,6 +1,6 @@
 import Foundation
 
-struct LoginSuccess: Codable {
+public struct LoginSuccess: Codable {
     let data: LoginSuccessData
 }
 

@@ -23,7 +23,7 @@ public final class SurveyRepository: SurveyUseCase {
         if response.statusCode == 200 {
             print("Error")
             let loginRepository = LoginRepository(session: .shared)
-            let refreshToken = loginRepository.getTokens()
+            let refreshToken = LocalRepository.shared.getTokens()
             
             
             return nil

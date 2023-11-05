@@ -51,34 +51,12 @@ public final class LoginRepository: LoginUseCase {
         
         switch httpResponse.statusCode {
         case 200..<300:
-            saveUserTokens(loginSuccess: response.data)
+            LocalRepository.shared.saveUserTokens(loginSuccess: response.data)
             let loginSuccess = try JSONDecoder().decode(LoginSuccess.self, from: response.data)
             return .success(loginSuccess)
         default:
             let loginError = try JSONDecoder().decode(LoginError.self, from: response.data)
             return .failure(loginError)
-        }
-    }
-    
-    private func saveUserTokens(loginSuccess data: Data) {
-        secureStorage.saveData(
-            value: data,
-            forKey: LoginEnumData.userTokens.rawValue
-        )
-    }
-    
-    internal func getTokens() -> LoginSuccess? {
-        guard let data = secureStorage.getData(LoginEnumData.userTokens.rawValue) else {
-            print("Not Found in Keychain")
-            return nil
-        }
-        
-        do {
-            let tokens = try JSONDecoder().decode(LoginSuccess.self, from: data)
-            return tokens
-        } catch {
-            print(error.localizedDescription)
-            return nil
         }
     }
 }
