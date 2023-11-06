@@ -140,6 +140,7 @@ extension SurveyListView: ViewCoding {
         descriptionTitleConstraints()
         userPictureConstraints()
         gradientOverlayConstraints()
+        loadingViewConstraints()
     }
     
     private func backgroundImageConstraints() {
@@ -203,6 +204,10 @@ extension SurveyListView: ViewCoding {
     }
     
     private func gradientOverlayConstraints() {
+        gradientOverlay.constraintToSuperView()
+    }
+    
+    private func loadingViewConstraints() {
         gradientOverlay.constraintToSuperView()
     }
 }

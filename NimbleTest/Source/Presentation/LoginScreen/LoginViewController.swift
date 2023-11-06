@@ -51,14 +51,13 @@ public final class LoginViewController: UIViewController {
     }
     
     private func navigateToSurveyList() {
-        let surveyUseCase = SurveyRepository(session: .shared)
-        let viewModel = SurveyListViewModel(surveyUseCase: surveyUseCase)
-        let surveyListViewController = SurveyListViewController(viewModel: viewModel)
-        navigationController?.pushViewController(surveyListViewController, 
+        let surveyListViewController = SurveyFactory.makeViewController()
+        navigationController?.pushViewController(surveyListViewController,
                                                  animated: true)
     }
     
     private func showErrorMessageAlert(_ message: String) {
+        contentView.logInButton.loadingIndicator(false)
         let alert = UIAlertController(title: "Login Error", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
@@ -71,6 +70,7 @@ extension LoginViewController {
     }
     
     @objc func didTapLoginButton(_ sender: Any) {
+        contentView.logInButton.loadingIndicator(true)
         Task {
             guard let email = contentView.loginTextField.text,
                   let password = contentView.passwordTextField.text else {

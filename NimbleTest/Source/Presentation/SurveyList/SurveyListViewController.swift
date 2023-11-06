@@ -1,9 +1,9 @@
 import SwiftUI
 
 public final class SurveyListViewController: UIViewController {
+    
     private var contentView = SurveyListView()
-    private var repository = SurveyRepository(session: .shared)
-    private var userRepository = UserRepository(session: .shared)
+    private var loadingView = LoadingViewController()
     
     private let viewModel: SurveyListViewModel
     
@@ -20,11 +20,19 @@ public final class SurveyListViewController: UIViewController {
         view = contentView
     }
     
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadingView.modalTransitionStyle = .crossDissolve
+        loadingView.modalPresentationStyle = .overCurrentContext
+        present(loadingView, animated: true) {
+            self.viewModel.fetchSurveyrs()
+        }
+    }
+    
     public override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
         setupSwipeGesture()
-        viewModel.fetchSurveyrs()
         addBinders()
     }
     
@@ -40,6 +48,7 @@ public final class SurveyListViewController: UIViewController {
                     return
                 }
                 self.contentView.updateView(with: first)
+                self.loadingView.dismiss()
             }
         }.store(in: &viewModel.cancellable)
     }
@@ -73,40 +82,6 @@ public final class SurveyListViewController: UIViewController {
                     let index = self.contentView.pageControl.currentPage
                     self.contentView.updateView(with: self.viewModel.surveys[index])
                 }, completion: nil)
-            }
-        }
-    }
-    
-    func loadSurvey() {
-        Task {
-            let session = try await repository.loadSurveys() 
-            
-            switch session {
-            case .success(let survey):
-                for item in survey.data {
-                    print(item.attributes.title)
-                }
-                contentView.pageControl.numberOfPages = survey.data.count
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
-    func loadUserData() {
-        Task {
-            let session = try await userRepository.loadUserData()
-            
-            switch session {
-            case .success(let userData):
-                let userImageString = userData.attributes.avatarURL
-                let url = URL(string: userImageString)!
-                DispatchQueue.main.async {
-                    self.contentView.userPicture.load(url: url)
-                }
-                
-            case .failure(let error):
-                print(error.localizedDescription)
             }
         }
     }

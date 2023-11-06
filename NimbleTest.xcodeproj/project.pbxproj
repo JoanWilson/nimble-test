@@ -53,6 +53,10 @@
 		855C11482AF8662000132FC8 /* RepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855C11472AF8662000132FC8 /* RepositoryError.swift */; };
 		855C114A2AF8686500132FC8 /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855C11492AF8686500132FC8 /* UIImageView+.swift */; };
 		855C114C2AF86D5B00132FC8 /* SurveyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855C114B2AF86D5B00132FC8 /* SurveyListViewModel.swift */; };
+		855C114E2AF8A69800132FC8 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855C114D2AF8A69800132FC8 /* LoadingView.swift */; };
+		855C11512AF8B4CF00132FC8 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855C11502AF8B4CF00132FC8 /* LoadingViewController.swift */; };
+		855C11532AF8B55900132FC8 /* SurveyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855C11522AF8B55900132FC8 /* SurveyFactory.swift */; };
+		855C11552AF8B74700132FC8 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855C11542AF8B74700132FC8 /* UIButton+.swift */; };
 		85AE8D282AF72386008A2AD8 /* SurveyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AE8D272AF72386008A2AD8 /* SurveyListView.swift */; };
 		DDED70590E3EB4264E1D8B63 /* Pods_NimbleTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63898B4B08A80B4C438A9658 /* Pods_NimbleTest.framework */; };
 /* End PBXBuildFile section */
@@ -128,6 +132,10 @@
 		855C11472AF8662000132FC8 /* RepositoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryError.swift; sourceTree = "<group>"; };
 		855C11492AF8686500132FC8 /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
 		855C114B2AF86D5B00132FC8 /* SurveyListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyListViewModel.swift; sourceTree = "<group>"; };
+		855C114D2AF8A69800132FC8 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		855C11502AF8B4CF00132FC8 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		855C11522AF8B55900132FC8 /* SurveyFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyFactory.swift; sourceTree = "<group>"; };
+		855C11542AF8B74700132FC8 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		85AE8D272AF72386008A2AD8 /* SurveyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyListView.swift; sourceTree = "<group>"; };
 		9FD0DC2F9509BB670291D5ED /* Pods-NimbleTest-NimbleTestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleTest-NimbleTestUITests.debug.xcconfig"; path = "Target Support Files/Pods-NimbleTest-NimbleTestUITests/Pods-NimbleTest-NimbleTestUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AD4C3BFA635D733C363174B7 /* Pods-NimbleTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleTestTests.release.xcconfig"; path = "Target Support Files/Pods-NimbleTestTests/Pods-NimbleTestTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -209,6 +217,7 @@
 				855C114B2AF86D5B00132FC8 /* SurveyListViewModel.swift */,
 				852033B62AF6E90900659D09 /* SurveyListViewController.swift */,
 				85AE8D272AF72386008A2AD8 /* SurveyListView.swift */,
+				855C11522AF8B55900132FC8 /* SurveyFactory.swift */,
 			);
 			path = SurveyList;
 			sourceTree = "<group>";
@@ -277,6 +286,7 @@
 		852A16EA2AF5B6030026FA4A /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				855C114F2AF8B48B00132FC8 /* LoadingView */,
 				852033B52AF6E8EB00659D09 /* SurveyList */,
 				852A17152AF5DE720026FA4A /* LoginScreen */,
 				852A16ED2AF5B61A0026FA4A /* LaunchScreen */,
@@ -468,6 +478,7 @@
 				852A17252AF5ED680026FA4A /* UIScreen+.swift */,
 				852A172C2AF608D30026FA4A /* UIViewController+.swift */,
 				855C11492AF8686500132FC8 /* UIImageView+.swift */,
+				855C11542AF8B74700132FC8 /* UIButton+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -536,6 +547,15 @@
 				855C11422AF865D300132FC8 /* UserRepository.swift */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		855C114F2AF8B48B00132FC8 /* LoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				855C114D2AF8A69800132FC8 /* LoadingView.swift */,
+				855C11502AF8B4CF00132FC8 /* LoadingViewController.swift */,
+			);
+			path = LoadingView;
 			sourceTree = "<group>";
 		};
 		F3046CA6F2CDDAEA70E66F98 /* Pods */ = {
@@ -799,12 +819,15 @@
 				852A172D2AF608D30026FA4A /* UIViewController+.swift in Sources */,
 				855C11322AF83C7500132FC8 /* SurveyData.swift in Sources */,
 				855C114A2AF8686500132FC8 /* UIImageView+.swift in Sources */,
+				855C11552AF8B74700132FC8 /* UIButton+.swift in Sources */,
 				852A17032AF5BFBA0026FA4A /* HTTPSessionProtocol.swift in Sources */,
 				855C114C2AF86D5B00132FC8 /* SurveyListViewModel.swift in Sources */,
+				855C11512AF8B4CF00132FC8 /* LoadingViewController.swift in Sources */,
 				855C11352AF8410100132FC8 /* SurveyRepository.swift in Sources */,
 				852A16BA2AF5AFD10026FA4A /* AppDelegate.swift in Sources */,
 				852A16BC2AF5AFD10026FA4A /* SceneDelegate.swift in Sources */,
 				852A16F92AF5BD700026FA4A /* LoginSuccess.swift in Sources */,
+				855C114E2AF8A69800132FC8 /* LoadingView.swift in Sources */,
 				855C11372AF842DA00132FC8 /* SurveyUseCase.swift in Sources */,
 				852A172F2AF60B150026FA4A /* LoginFactory.swift in Sources */,
 				852A17082AF5C1B60026FA4A /* APIEndpoint.swift in Sources */,
@@ -814,6 +837,7 @@
 				852A17242AF5ED4C0026FA4A /* UIWindow+.swift in Sources */,
 				852A17052AF5C0750026FA4A /* LoginRepository.swift in Sources */,
 				855C11402AF8652E00132FC8 /* UserData.swift in Sources */,
+				855C11532AF8B55900132FC8 /* SurveyFactory.swift in Sources */,
 				855C11462AF865F900132FC8 /* UserUseCase.swift in Sources */,
 				852033B02AF6DF7900659D09 /* LoginEnumData.swift in Sources */,
 				852A17292AF5F45F0026FA4A /* TextField.swift in Sources */,
