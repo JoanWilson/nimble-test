@@ -40,13 +40,15 @@ public final class SurveyListViewController: UIViewController {
     
     func loadSurvey() {
         Task {
-            guard let session = try await repository.loadSurveys() else {
-                return
-            }
+            let session = try await repository.loadSurveys() 
             
-            
-            for survey in session.data {
-                print(survey.attributes.title)
+            switch session {
+            case .success(let survey):
+                for item in survey.data {
+                    print(item.attributes.title)
+                }
+            case .failure(let error):
+                print(error)
             }
         }
     }

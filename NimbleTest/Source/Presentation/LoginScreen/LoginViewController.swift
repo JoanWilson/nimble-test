@@ -69,16 +69,15 @@ extension LoginViewController {
     }
     
     @objc func didTapLoginButton(_ sender: Any) {
-        navigationController?.pushViewController(SurveyListViewController(), animated: true)
-//        Task {
-//            guard let email = contentView.loginTextField.text,
-//                  let password = contentView.passwordTextField.text else {
-//                print("Nulo")
-//                return
-//            }
-//            let result = await login(email: email, password: password)
-//            print(result)
-//        }
+        Task {
+            guard let email = contentView.loginTextField.text,
+                  let password = contentView.passwordTextField.text else {
+                print("Nulo")
+                return
+            }
+            let result = await login(email: email, password: password)
+            print(result)
+        }
     }
     
     @objc func login(email: String, password: String) async -> Bool {
