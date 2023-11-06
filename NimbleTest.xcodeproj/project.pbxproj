@@ -60,6 +60,7 @@
 		857CFF7A2AF97036003F40FF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857CFF792AF97036003F40FF /* DetailViewController.swift */; };
 		857CFF7C2AF97FFE003F40FF /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857CFF7B2AF97FFE003F40FF /* DetailView.swift */; };
 		85AE8D282AF72386008A2AD8 /* SurveyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AE8D272AF72386008A2AD8 /* SurveyListView.swift */; };
+		85F0386A2AF9B05B00D9F5A8 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F038692AF9B05B00D9F5A8 /* File.swift */; };
 		DDED70590E3EB4264E1D8B63 /* Pods_NimbleTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63898B4B08A80B4C438A9658 /* Pods_NimbleTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -141,6 +142,7 @@
 		857CFF792AF97036003F40FF /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		857CFF7B2AF97FFE003F40FF /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		85AE8D272AF72386008A2AD8 /* SurveyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyListView.swift; sourceTree = "<group>"; };
+		85F038692AF9B05B00D9F5A8 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		9FD0DC2F9509BB670291D5ED /* Pods-NimbleTest-NimbleTestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleTest-NimbleTestUITests.debug.xcconfig"; path = "Target Support Files/Pods-NimbleTest-NimbleTestUITests/Pods-NimbleTest-NimbleTestUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AD4C3BFA635D733C363174B7 /* Pods-NimbleTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleTestTests.release.xcconfig"; path = "Target Support Files/Pods-NimbleTestTests/Pods-NimbleTestTests.release.xcconfig"; sourceTree = "<group>"; };
 		B1EE276A13CCC4607315A0E1 /* Pods-NimbleTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleTest.debug.xcconfig"; path = "Target Support Files/Pods-NimbleTest/Pods-NimbleTest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -492,6 +494,7 @@
 			isa = PBXGroup;
 			children = (
 				852A17282AF5F45F0026FA4A /* TextField.swift */,
+				85F038692AF9B05B00D9F5A8 /* File.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -863,6 +866,7 @@
 				852A16F32AF5B9420026FA4A /* LoginEmailRequest.swift in Sources */,
 				852A17222AF5E47B0026FA4A /* UIView+.swift in Sources */,
 				852A16F72AF5BA130026FA4A /* LoginUseCase.swift in Sources */,
+				85F0386A2AF9B05B00D9F5A8 /* File.swift in Sources */,
 				852A16FC2AF5BE1C0026FA4A /* LoginError.swift in Sources */,
 				855C11482AF8662000132FC8 /* RepositoryError.swift in Sources */,
 				852A16FE2AF5BE800026FA4A /* LoginEnumError.swift in Sources */,

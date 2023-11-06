@@ -15,6 +15,9 @@ public class DetailViewController: UIViewController {
     }
 
     public init(title: String, description: String, backgroundImage: UIImage) {
+        contentView.surveyTitle.text = title
+        contentView.surveyDescription.text = description
+        contentView.backgroundImage.image = backgroundImage
         super.init(nibName: nil, bundle: nil)
     }
     
