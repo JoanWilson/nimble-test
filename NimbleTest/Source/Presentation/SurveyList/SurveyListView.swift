@@ -6,7 +6,11 @@ public final class SurveyListView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 13, weight: .regular)
-        label.text = "MONDAY, JUNE 15"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE, MMMM d"
+        let currentDate = Date()
+        let formattedDate = dateFormatter.string(from: currentDate)
+        label.text = formattedDate.uppercased()
         label.textColor = .white
         label.textAlignment = .left
         
@@ -23,7 +27,7 @@ public final class SurveyListView: UIView {
         return label
     }()
     
-    private lazy var userPicture: UIImageView = {
+    public lazy var userPicture: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(named: "Images/userPic")
