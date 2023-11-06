@@ -54,3 +54,6 @@ struct LoadingBar: View {
     }
 }
 
+#Preview {
+    LoadingView()
+}

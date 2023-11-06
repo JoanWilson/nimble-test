@@ -96,7 +96,7 @@ extension LoginViewController {
     
     @objc func keyboardWillShow(sender: NSNotification) {
         if view.frame.origin.y == 0 {
-            view.frame.origin.y = view.frame.origin.y - 50
+            view.frame.origin.y = view.frame.origin.y - 80
         }
     }
 
