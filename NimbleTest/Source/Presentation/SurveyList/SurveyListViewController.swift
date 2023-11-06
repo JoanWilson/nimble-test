@@ -22,11 +22,7 @@ public final class SurveyListViewController: UIViewController {
     
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        loadingView.modalTransitionStyle = .crossDissolve
-        loadingView.modalPresentationStyle = .overCurrentContext
-        present(loadingView, animated: true) {
-            self.viewModel.fetchSurveyrs()
-        }
+        navigationController?.isNavigationBarHidden = true
     }
     
     public override func viewDidLoad() {
@@ -34,6 +30,13 @@ public final class SurveyListViewController: UIViewController {
         setupNavigationBar()
         setupSwipeGesture()
         addBinders()
+        contentView.detailButton.addTarget(self, action: #selector(detailButtonTapped), for: .touchUpInside)
+        loadingView.modalTransitionStyle = .crossDissolve
+        loadingView.modalPresentationStyle = .overCurrentContext
+        present(loadingView, animated: true) {
+            self.viewModel.fetchSurveyrs()
+        }
+        navigationController?.delegate = self
     }
     
     private func addBinders() {
@@ -85,4 +88,23 @@ public final class SurveyListViewController: UIViewController {
             }
         }
     }
+    
+    @objc func detailButtonTapped() {
+        DispatchQueue.main.async {
+            let viewController = DetailViewController(
+                title: self.contentView.surveyTitle.text!,
+                description: self.contentView.descriptionTitle.text!,
+                backgroundImage: self.contentView.backgroundImage.image!
+            )
+            self.navigationController?.pushViewController(viewController, animated: true)
+            self.navigationController?.isNavigationBarHidden = false
+            self.navigationItem.hidesBackButton = false
+        }
+    }
+}
+
+extension SurveyListViewController: UINavigationControllerDelegate {
+    public func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+                return CrossDissolveTransitionAnimator()
+        }
 }

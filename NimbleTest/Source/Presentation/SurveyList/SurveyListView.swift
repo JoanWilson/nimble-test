@@ -2,7 +2,7 @@ import UIKit
 
 public final class SurveyListView: UIView {
     
-    private lazy var descriptionTitle: UILabel = {
+    internal lazy var descriptionTitle: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 13, weight: .regular)
@@ -79,7 +79,7 @@ public final class SurveyListView: UIView {
         return label
     }()
     
-    private lazy var detailButton: UIButton = {
+    public lazy var detailButton: UIButton = {
         let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(named: "Logos/detailButton"), for: .normal)
