@@ -22,11 +22,7 @@ public final class SurveyListViewController: UIViewController {
     
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        loadingView.modalTransitionStyle = .crossDissolve
-        loadingView.modalPresentationStyle = .overCurrentContext
-        present(loadingView, animated: true) {
-            self.viewModel.fetchSurveyrs()
-        }
+        navigationController?.isNavigationBarHidden = true
     }
     
     public override func viewDidLoad() {
@@ -34,6 +30,13 @@ public final class SurveyListViewController: UIViewController {
         setupNavigationBar()
         setupSwipeGesture()
         addBinders()
+        contentView.detailButton.addTarget(self, action: #selector(detailButtonTapped), for: .touchUpInside)
+        loadingView.modalTransitionStyle = .crossDissolve
+        loadingView.modalPresentationStyle = .overCurrentContext
+        present(loadingView, animated: true) {
+            self.viewModel.fetchSurveyrs()
+        }
+        navigationController?.delegate = self
     }
     
     private func addBinders() {
@@ -83,6 +86,52 @@ public final class SurveyListViewController: UIViewController {
                     self.contentView.updateView(with: self.viewModel.surveys[index])
                 }, completion: nil)
             }
+        }
+    }
+    
+    @objc func detailButtonTapped() {
+        
+        DispatchQueue.main.async {
+            let viewController = DetailViewController(
+                title: self.contentView.surveyTitle.text!,
+                description: self.contentView.descriptionTitle.text!,
+                backgroundImage: self.contentView.backgroundImage.image!
+            )
+            self.navigationController?.pushViewController(viewController, animated: true)
+            self.navigationController?.isNavigationBarHidden = false
+            self.navigationItem.hidesBackButton = false
+        }
+    }
+}
+
+extension SurveyListViewController: UINavigationControllerDelegate {
+    public func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+                return CrossDissolveTransitionAnimator()
+        }
+}
+
+class CrossDissolveTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+        return 0.5 // Adjust the duration as needed
+    }
+
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        guard let fromView = transitionContext.view(forKey: .from),
+              let toView = transitionContext.view(forKey: .to) else {
+            return
+        }
+
+        let containerView = transitionContext.containerView
+
+        toView.alpha = 0.0
+        containerView.addSubview(toView)
+
+        UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
+            toView.alpha = 1.0
+            fromView.alpha = 0.0
+        }) { _ in
+            fromView.alpha = 1.0
+            transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
         }
     }
 }
