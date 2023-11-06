@@ -5,6 +5,7 @@ target 'NimbleTest' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
   pod 'KeychainSwift', '~> 20.0'
+  pod 'ShimmerView'
   # Pods for NimbleTest
 
   target 'NimbleTestTests' do

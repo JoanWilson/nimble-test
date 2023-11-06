@@ -1,16 +1,20 @@
 PODS:
   - KeychainSwift (20.0.0)
+  - ShimmerView (0.5.0)
 
 DEPENDENCIES:
   - KeychainSwift (~> 20.0)
+  - ShimmerView
 
 SPEC REPOS:
   trunk:
     - KeychainSwift
+    - ShimmerView
 
 SPEC CHECKSUMS:
   KeychainSwift: 0ce6a4d13f7228054d1a71bb1b500448fb2ab837
+  ShimmerView: ffde81304d8fb29127cbce492d14430dca288ebb
 
-PODFILE CHECKSUM: aebf14756084797552ac3c57b59b958649c148c5
+PODFILE CHECKSUM: 5c6e858d4d374053ab05255bfc029b77c0493966
 
 COCOAPODS: 1.12.1

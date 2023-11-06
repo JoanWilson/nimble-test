@@ -6,7 +6,11 @@ public final class SurveyListView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 13, weight: .regular)
-        label.text = "MONDAY, JUNE 15"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE, MMMM d"
+        let currentDate = Date()
+        let formattedDate = dateFormatter.string(from: currentDate)
+        label.text = formattedDate.uppercased()
         label.textColor = .white
         label.textAlignment = .left
         
@@ -23,13 +27,22 @@ public final class SurveyListView: UIView {
         return label
     }()
     
-    private lazy var userPicture: UIImageView = {
+    public lazy var userPicture: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(named: "Images/userPic")
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 17
+        
+        return imageView
+    }()
+    
+    private lazy var gradientOverlay: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(named: "Images/gradientOverlay")
+        imageView.contentMode = .scaleAspectFill
         
         return imageView
     }()
@@ -88,12 +101,26 @@ public final class SurveyListView: UIView {
         super.willMove(toWindow: newWindow)
         buildLayout()
     }
+    
+    public func updateView(with survey: Survey) {
+        surveyTitle.text = survey.attributes.title
+        surveyDescription.text = survey.attributes.description
+        
+        
+        let imageString = survey.attributes.coverImageURL
+        guard let url = URL(string: imageString) else {
+            return
+        }
+        
+        backgroundImage.load(url: url)
+    }
 }
 
 extension SurveyListView: ViewCoding {
     
     func setupHierarchy() {
         addSubview(backgroundImage)
+        addSubview(gradientOverlay)
         addSubview(surveyDescription)
         addSubview(detailButton)
         addSubview(surveyTitle)
@@ -112,6 +139,8 @@ extension SurveyListView: ViewCoding {
         titleConstraints()
         descriptionTitleConstraints()
         userPictureConstraints()
+        gradientOverlayConstraints()
+        loadingViewConstraints()
     }
     
     private func backgroundImageConstraints() {
@@ -172,5 +201,13 @@ extension SurveyListView: ViewCoding {
             userPicture.centerYAnchor.constraint(equalTo: title.centerYAnchor),
             userPicture.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
         ])
+    }
+    
+    private func gradientOverlayConstraints() {
+        gradientOverlay.constraintToSuperView()
+    }
+    
+    private func loadingViewConstraints() {
+        gradientOverlay.constraintToSuperView()
     }
 }

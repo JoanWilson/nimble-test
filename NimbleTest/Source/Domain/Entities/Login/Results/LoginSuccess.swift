@@ -1,15 +1,15 @@
 import Foundation
 
-struct LoginSuccess: Codable {
+public struct LoginSuccess: Codable {
     let data: LoginSuccessData
 }
 
 struct LoginSuccessData: Codable {
     let id, type: String?
-    let attributes: Attributes?
+    let attributes: LoginAttributes?
 }
 
-struct Attributes: Codable {
+struct LoginAttributes: Codable {
     let accessToken, tokenType: String?
     let expiresIn: Int?
     let refreshToken: String?

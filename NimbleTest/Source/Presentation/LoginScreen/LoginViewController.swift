@@ -51,12 +51,13 @@ public final class LoginViewController: UIViewController {
     }
     
     private func navigateToSurveyList() {
-        let surveyListViewController = SurveyListViewController()
-        navigationController?.pushViewController(surveyListViewController, 
+        let surveyListViewController = SurveyFactory.makeViewController()
+        navigationController?.pushViewController(surveyListViewController,
                                                  animated: true)
     }
     
     private func showErrorMessageAlert(_ message: String) {
+        contentView.logInButton.loadingIndicator(false)
         let alert = UIAlertController(title: "Login Error", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
@@ -69,16 +70,16 @@ extension LoginViewController {
     }
     
     @objc func didTapLoginButton(_ sender: Any) {
-        navigationController?.pushViewController(SurveyListViewController(), animated: true)
-//        Task {
-//            guard let email = contentView.loginTextField.text,
-//                  let password = contentView.passwordTextField.text else {
-//                print("Nulo")
-//                return
-//            }
-//            let result = await login(email: email, password: password)
-//            print(result)
-//        }
+        contentView.logInButton.loadingIndicator(true)
+        Task {
+            guard let email = contentView.loginTextField.text,
+                  let password = contentView.passwordTextField.text else {
+                print("Nulo")
+                return
+            }
+            let result = await login(email: email, password: password)
+            print(result)
+        }
     }
     
     @objc func login(email: String, password: String) async -> Bool {
@@ -95,7 +96,7 @@ extension LoginViewController {
     
     @objc func keyboardWillShow(sender: NSNotification) {
         if view.frame.origin.y == 0 {
-            view.frame.origin.y = view.frame.origin.y - 50
+            view.frame.origin.y = view.frame.origin.y - 80
         }
     }
 

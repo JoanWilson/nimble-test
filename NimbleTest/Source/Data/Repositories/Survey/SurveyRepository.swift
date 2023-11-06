@@ -10,27 +10,30 @@ public final class SurveyRepository: SurveyUseCase {
         self.session = session
     }
     
-    func loadSurveys() async throws -> SurveyData? {
+    func loadSurveys() async throws -> Result<SurveyData, RepositoryError> {
         let endpoint = APIEndpoint.surveys
         let url = endpoint.url(for: baseURL)
         var request = URLRequest(url: url)
         
+        guard let tokens = LocalRepository.shared.getTokens() else {
+            return .failure(.noAccessToken)
+        }
+        
+        guard let accessToken = tokens.data.attributes?.accessToken else {
+            return .failure(.noAccessToken)
+        }
+        
         request.httpMethod = "GET"
-        request.addValue("Bearer BLXNfSZoUoUBGr7Z1RHO6ilu_44HcIsK_y7hR-osZmw", forHTTPHeaderField: "Authorization")
+        request.addValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
         
         let (data, response) = try await session.data(for: request)
         
-        if response.statusCode == 200 {
-            print("Error")
-            let loginRepository = LoginRepository(session: .shared)
-            let refreshToken = loginRepository.getTokens()
-            
-            
-            return nil
+        if response.statusCode > 200 {
+            return .failure(.requestFailed)
         }
         
         let surveyData = try JSONDecoder().decode(SurveyData.self, from: data)
-        return surveyData
+        return .success(surveyData)
     }
 }
 

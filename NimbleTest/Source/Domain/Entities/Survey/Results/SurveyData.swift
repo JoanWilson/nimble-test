@@ -5,7 +5,7 @@ struct SurveyData: Codable {
     let meta: SurveyMeta
 }
 
-struct Survey: Codable {
+public struct Survey: Codable {
     let id, type: String
     let attributes: SurveyAttributes
 }

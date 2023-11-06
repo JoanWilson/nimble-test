@@ -43,10 +43,20 @@
 		852A172F2AF60B150026FA4A /* LoginFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852A172E2AF60B150026FA4A /* LoginFactory.swift */; };
 		855862912AF6BA7800F99CDD /* Neuzeit S LT Std Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 855862902AF6BA7800F99CDD /* Neuzeit S LT Std Book.otf */; };
 		855862932AF6BCF100F99CDD /* Neuzeit Grotesk Cond W01 Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 855862922AF6BCF100F99CDD /* Neuzeit Grotesk Cond W01 Black.otf */; };
-		855C112E2AF8022700132FC8 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855C112D2AF8022700132FC8 /* TitleView.swift */; };
 		855C11322AF83C7500132FC8 /* SurveyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855C11312AF83C7500132FC8 /* SurveyData.swift */; };
 		855C11352AF8410100132FC8 /* SurveyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855C11342AF8410100132FC8 /* SurveyRepository.swift */; };
 		855C11372AF842DA00132FC8 /* SurveyUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855C11362AF842DA00132FC8 /* SurveyUseCase.swift */; };
+		855C113A2AF85FC600132FC8 /* LocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855C11392AF85FC600132FC8 /* LocalRepository.swift */; };
+		855C11402AF8652E00132FC8 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855C113F2AF8652E00132FC8 /* UserData.swift */; };
+		855C11432AF865D300132FC8 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855C11422AF865D300132FC8 /* UserRepository.swift */; };
+		855C11462AF865F900132FC8 /* UserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855C11452AF865F900132FC8 /* UserUseCase.swift */; };
+		855C11482AF8662000132FC8 /* RepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855C11472AF8662000132FC8 /* RepositoryError.swift */; };
+		855C114A2AF8686500132FC8 /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855C11492AF8686500132FC8 /* UIImageView+.swift */; };
+		855C114C2AF86D5B00132FC8 /* SurveyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855C114B2AF86D5B00132FC8 /* SurveyListViewModel.swift */; };
+		855C114E2AF8A69800132FC8 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855C114D2AF8A69800132FC8 /* LoadingView.swift */; };
+		855C11512AF8B4CF00132FC8 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855C11502AF8B4CF00132FC8 /* LoadingViewController.swift */; };
+		855C11532AF8B55900132FC8 /* SurveyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855C11522AF8B55900132FC8 /* SurveyFactory.swift */; };
+		855C11552AF8B74700132FC8 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855C11542AF8B74700132FC8 /* UIButton+.swift */; };
 		85AE8D282AF72386008A2AD8 /* SurveyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AE8D272AF72386008A2AD8 /* SurveyListView.swift */; };
 		DDED70590E3EB4264E1D8B63 /* Pods_NimbleTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63898B4B08A80B4C438A9658 /* Pods_NimbleTest.framework */; };
 /* End PBXBuildFile section */
@@ -112,10 +122,20 @@
 		852A172E2AF60B150026FA4A /* LoginFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFactory.swift; sourceTree = "<group>"; };
 		855862902AF6BA7800F99CDD /* Neuzeit S LT Std Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Neuzeit S LT Std Book.otf"; path = "../../../../../Downloads/Neuzeit S LT Std Book/Neuzeit S LT Std Book.otf"; sourceTree = "<group>"; };
 		855862922AF6BCF100F99CDD /* Neuzeit Grotesk Cond W01 Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Neuzeit Grotesk Cond W01 Black.otf"; path = "../../../../../Downloads/Neuzeit_ff/Neuzeit Grotesk Cond W01 Black.otf"; sourceTree = "<group>"; };
-		855C112D2AF8022700132FC8 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		855C11312AF83C7500132FC8 /* SurveyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyData.swift; sourceTree = "<group>"; };
 		855C11342AF8410100132FC8 /* SurveyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyRepository.swift; sourceTree = "<group>"; };
 		855C11362AF842DA00132FC8 /* SurveyUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyUseCase.swift; sourceTree = "<group>"; };
+		855C11392AF85FC600132FC8 /* LocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRepository.swift; sourceTree = "<group>"; };
+		855C113F2AF8652E00132FC8 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		855C11422AF865D300132FC8 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		855C11452AF865F900132FC8 /* UserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUseCase.swift; sourceTree = "<group>"; };
+		855C11472AF8662000132FC8 /* RepositoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryError.swift; sourceTree = "<group>"; };
+		855C11492AF8686500132FC8 /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
+		855C114B2AF86D5B00132FC8 /* SurveyListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyListViewModel.swift; sourceTree = "<group>"; };
+		855C114D2AF8A69800132FC8 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		855C11502AF8B4CF00132FC8 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		855C11522AF8B55900132FC8 /* SurveyFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyFactory.swift; sourceTree = "<group>"; };
+		855C11542AF8B74700132FC8 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		85AE8D272AF72386008A2AD8 /* SurveyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyListView.swift; sourceTree = "<group>"; };
 		9FD0DC2F9509BB670291D5ED /* Pods-NimbleTest-NimbleTestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleTest-NimbleTestUITests.debug.xcconfig"; path = "Target Support Files/Pods-NimbleTest-NimbleTestUITests/Pods-NimbleTest-NimbleTestUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AD4C3BFA635D733C363174B7 /* Pods-NimbleTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleTestTests.release.xcconfig"; path = "Target Support Files/Pods-NimbleTestTests/Pods-NimbleTestTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -194,9 +214,10 @@
 		852033B52AF6E8EB00659D09 /* SurveyList */ = {
 			isa = PBXGroup;
 			children = (
+				855C114B2AF86D5B00132FC8 /* SurveyListViewModel.swift */,
 				852033B62AF6E90900659D09 /* SurveyListViewController.swift */,
 				85AE8D272AF72386008A2AD8 /* SurveyListView.swift */,
-				855C112D2AF8022700132FC8 /* TitleView.swift */,
+				855C11522AF8B55900132FC8 /* SurveyFactory.swift */,
 			);
 			path = SurveyList;
 			sourceTree = "<group>";
@@ -265,6 +286,7 @@
 		852A16EA2AF5B6030026FA4A /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				855C114F2AF8B48B00132FC8 /* LoadingView */,
 				852033B52AF6E8EB00659D09 /* SurveyList */,
 				852A17152AF5DE720026FA4A /* LoginScreen */,
 				852A16ED2AF5B61A0026FA4A /* LaunchScreen */,
@@ -338,6 +360,7 @@
 		852A16F42AF5BA010026FA4A /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				855C113D2AF8651F00132FC8 /* User */,
 				855C11302AF83C5F00132FC8 /* Survey */,
 				852A16FA2AF5BE040026FA4A /* Login */,
 			);
@@ -347,8 +370,9 @@
 		852A16F52AF5BA080026FA4A /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				855C112F2AF83C5600132FC8 /* Survey */,
-				852A16FF2AF5BF200026FA4A /* Authentication */,
+				855C11362AF842DA00132FC8 /* SurveyUseCase.swift */,
+				852A16F62AF5BA130026FA4A /* LoginUseCase.swift */,
+				855C11452AF865F900132FC8 /* UserUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -362,17 +386,11 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		852A16FF2AF5BF200026FA4A /* Authentication */ = {
-			isa = PBXGroup;
-			children = (
-				852A16F62AF5BA130026FA4A /* LoginUseCase.swift */,
-			);
-			path = Authentication;
-			sourceTree = "<group>";
-		};
 		852A17002AF5BF7B0026FA4A /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				855C11412AF865C400132FC8 /* User */,
+				855C11382AF85FB800132FC8 /* Local */,
 				852033AA2AF6DA5D00659D09 /* Survey */,
 				852A17062AF5C19C0026FA4A /* Login */,
 			);
@@ -434,8 +452,8 @@
 		852A17152AF5DE720026FA4A /* LoginScreen */ = {
 			isa = PBXGroup;
 			children = (
-				852A17162AF5DE8B0026FA4A /* LoginViewController.swift */,
 				852A17182AF5DEA30026FA4A /* LoginViewModel.swift */,
+				852A17162AF5DE8B0026FA4A /* LoginViewController.swift */,
 				852A171A2AF5DEAA0026FA4A /* LoginView.swift */,
 				852A172E2AF60B150026FA4A /* LoginFactory.swift */,
 			);
@@ -459,6 +477,8 @@
 				852A17232AF5ED4C0026FA4A /* UIWindow+.swift */,
 				852A17252AF5ED680026FA4A /* UIScreen+.swift */,
 				852A172C2AF608D30026FA4A /* UIViewController+.swift */,
+				855C11492AF8686500132FC8 /* UIImageView+.swift */,
+				855C11542AF8B74700132FC8 /* UIButton+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -480,20 +500,62 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		855C112F2AF83C5600132FC8 /* Survey */ = {
+		855C11302AF83C5F00132FC8 /* Survey */ = {
 			isa = PBXGroup;
 			children = (
-				855C11362AF842DA00132FC8 /* SurveyUseCase.swift */,
+				855C113C2AF8650900132FC8 /* Results */,
 			);
 			path = Survey;
 			sourceTree = "<group>";
 		};
-		855C11302AF83C5F00132FC8 /* Survey */ = {
+		855C11382AF85FB800132FC8 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				855C11392AF85FC600132FC8 /* LocalRepository.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		855C113C2AF8650900132FC8 /* Results */ = {
 			isa = PBXGroup;
 			children = (
 				855C11312AF83C7500132FC8 /* SurveyData.swift */,
+				855C11472AF8662000132FC8 /* RepositoryError.swift */,
 			);
-			path = Survey;
+			path = Results;
+			sourceTree = "<group>";
+		};
+		855C113D2AF8651F00132FC8 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				855C113E2AF8652400132FC8 /* Results */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		855C113E2AF8652400132FC8 /* Results */ = {
+			isa = PBXGroup;
+			children = (
+				855C113F2AF8652E00132FC8 /* UserData.swift */,
+			);
+			path = Results;
+			sourceTree = "<group>";
+		};
+		855C11412AF865C400132FC8 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				855C11422AF865D300132FC8 /* UserRepository.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		855C114F2AF8B48B00132FC8 /* LoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				855C114D2AF8A69800132FC8 /* LoadingView.swift */,
+				855C11502AF8B4CF00132FC8 /* LoadingViewController.swift */,
+			);
+			path = LoadingView;
 			sourceTree = "<group>";
 		};
 		F3046CA6F2CDDAEA70E66F98 /* Pods */ = {
@@ -756,27 +818,37 @@
 				852033B22AF6E49D00659D09 /* LoginRefreshRequest.swift in Sources */,
 				852A172D2AF608D30026FA4A /* UIViewController+.swift in Sources */,
 				855C11322AF83C7500132FC8 /* SurveyData.swift in Sources */,
+				855C114A2AF8686500132FC8 /* UIImageView+.swift in Sources */,
+				855C11552AF8B74700132FC8 /* UIButton+.swift in Sources */,
 				852A17032AF5BFBA0026FA4A /* HTTPSessionProtocol.swift in Sources */,
+				855C114C2AF86D5B00132FC8 /* SurveyListViewModel.swift in Sources */,
+				855C11512AF8B4CF00132FC8 /* LoadingViewController.swift in Sources */,
 				855C11352AF8410100132FC8 /* SurveyRepository.swift in Sources */,
 				852A16BA2AF5AFD10026FA4A /* AppDelegate.swift in Sources */,
 				852A16BC2AF5AFD10026FA4A /* SceneDelegate.swift in Sources */,
 				852A16F92AF5BD700026FA4A /* LoginSuccess.swift in Sources */,
+				855C114E2AF8A69800132FC8 /* LoadingView.swift in Sources */,
 				855C11372AF842DA00132FC8 /* SurveyUseCase.swift in Sources */,
 				852A172F2AF60B150026FA4A /* LoginFactory.swift in Sources */,
 				852A17082AF5C1B60026FA4A /* APIEndpoint.swift in Sources */,
-				855C112E2AF8022700132FC8 /* TitleView.swift in Sources */,
 				852A17202AF5E1FA0026FA4A /* ViewCoding+.swift in Sources */,
 				85AE8D282AF72386008A2AD8 /* SurveyListView.swift in Sources */,
+				855C11432AF865D300132FC8 /* UserRepository.swift in Sources */,
 				852A17242AF5ED4C0026FA4A /* UIWindow+.swift in Sources */,
 				852A17052AF5C0750026FA4A /* LoginRepository.swift in Sources */,
+				855C11402AF8652E00132FC8 /* UserData.swift in Sources */,
+				855C11532AF8B55900132FC8 /* SurveyFactory.swift in Sources */,
+				855C11462AF865F900132FC8 /* UserUseCase.swift in Sources */,
 				852033B02AF6DF7900659D09 /* LoginEnumData.swift in Sources */,
 				852A17292AF5F45F0026FA4A /* TextField.swift in Sources */,
+				855C113A2AF85FC600132FC8 /* LocalRepository.swift in Sources */,
 				852A171B2AF5DEAA0026FA4A /* LoginView.swift in Sources */,
 				852A17192AF5DEA30026FA4A /* LoginViewModel.swift in Sources */,
 				852A16F32AF5B9420026FA4A /* LoginEmailRequest.swift in Sources */,
 				852A17222AF5E47B0026FA4A /* UIView+.swift in Sources */,
 				852A16F72AF5BA130026FA4A /* LoginUseCase.swift in Sources */,
 				852A16FC2AF5BE1C0026FA4A /* LoginError.swift in Sources */,
+				855C11482AF8662000132FC8 /* RepositoryError.swift in Sources */,
 				852A16FE2AF5BE800026FA4A /* LoginEnumError.swift in Sources */,
 				852033AC2AF6DAB300659D09 /* SecureStorage.swift in Sources */,
 			);

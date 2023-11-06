@@ -30,6 +30,7 @@ public final class LoginView: UIView {
         textField.autocorrectionType = .no
         textField.autocapitalizationType = .none
         textField.font = .systemFont(ofSize: 17)
+        textField.text = "wilsonapitests@gmail.com"
         
         return textField
     }()
@@ -42,6 +43,7 @@ public final class LoginView: UIView {
         textField.placeholder = "Password"
         textField.isSecureTextEntry = true
         textField.font = .systemFont(ofSize: 17)
+        textField.text = "12345678"
  
         return textField
     }()
