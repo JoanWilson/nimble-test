@@ -1,7 +1,7 @@
 import Foundation
 import KeychainSwift
 
-public final class SurveyRepository {
+public final class SurveyRepository: SurveyUseCase {
     public var baseURL = URL(string: "https://survey-api.nimblehq.co")!
     
     private let session: HTTPSessionProtocol

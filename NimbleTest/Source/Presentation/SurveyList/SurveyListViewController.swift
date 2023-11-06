@@ -5,13 +5,15 @@ public final class SurveyListViewController: UIViewController {
     private var repository = SurveyRepository(session: .shared)
     private var userRepository = UserRepository(session: .shared)
     
-    private var images: [UIImage] = [
-        UIImage(named: "Images/loginBackground")!,
-        UIImage(named: "Images/surveyBackground")!,
-        UIImage(named: "Images/loginBackground")!,
-        UIImage(named: "Images/surveyBackground")!,
-        UIImage(named: "Images/loginBackground")!
-    ]
+    private let viewModel: SurveyListViewModel
+    
+    init(viewModel: SurveyListViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    @available(*, unavailable)
+    required init?(coder: NSCoder) { nil }
     
     public override func loadView() {
         super.loadView()
@@ -20,9 +22,34 @@ public final class SurveyListViewController: UIViewController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-        loadSurvey()
+        setupNavigationBar()
+        setupSwipeGesture()
+        viewModel.fetchSurveyrs()
+        addBinders()
+    }
+    
+    private func addBinders() {
+        addSurveysBinder()
+    }
+    
+    private func addSurveysBinder() {
+        viewModel.$surveys.sink { surveys in
+            DispatchQueue.main.async {
+                self.contentView.pageControl.numberOfPages = surveys.count
+                guard let first = surveys.first else {
+                    return
+                }
+                self.contentView.updateView(with: first)
+            }
+        }.store(in: &viewModel.cancellable)
+    }
+    
+    private func setupNavigationBar() {
         navigationItem.hidesBackButton = true
         navigationController?.isNavigationBarHidden = true
+    }
+    
+    private func setupSwipeGesture() {
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
         contentView.addGestureRecognizer(panGesture)
     }
@@ -35,7 +62,8 @@ public final class SurveyListViewController: UIViewController {
                     self.contentView.surveyTitle.text = "Left"
                     self.contentView.pageControl.currentPage -= 1
                     let index = self.contentView.pageControl.currentPage
-                    self.contentView.backgroundImage.image = self.images[index]
+                    
+                    self.contentView.updateView(with: self.viewModel.surveys[index])
                 }, completion: nil)
             } else {
                 UIView.transition(with: contentView, duration: 0.5, options: .transitionCrossDissolve, animations: {
@@ -43,8 +71,7 @@ public final class SurveyListViewController: UIViewController {
                     self.contentView.pageControl.currentPage += 1
                     self.contentView.backgroundImage.image = UIImage(named: "Images/surveyBackground")
                     let index = self.contentView.pageControl.currentPage
-                    self.contentView.backgroundImage.image = self.images[index]
-
+                    self.contentView.updateView(with: self.viewModel.surveys[index])
                 }, completion: nil)
             }
         }

@@ -38,6 +38,15 @@ public final class SurveyListView: UIView {
         return imageView
     }()
     
+    private lazy var gradientOverlay: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(named: "Images/gradientOverlay")
+        imageView.contentMode = .scaleAspectFill
+        
+        return imageView
+    }()
+    
     public lazy var backgroundImage: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -92,12 +101,26 @@ public final class SurveyListView: UIView {
         super.willMove(toWindow: newWindow)
         buildLayout()
     }
+    
+    public func updateView(with survey: Survey) {
+        surveyTitle.text = survey.attributes.title
+        surveyDescription.text = survey.attributes.description
+        
+        
+        let imageString = survey.attributes.coverImageURL
+        guard let url = URL(string: imageString) else {
+            return
+        }
+        
+        backgroundImage.load(url: url)
+    }
 }
 
 extension SurveyListView: ViewCoding {
     
     func setupHierarchy() {
         addSubview(backgroundImage)
+        addSubview(gradientOverlay)
         addSubview(surveyDescription)
         addSubview(detailButton)
         addSubview(surveyTitle)
@@ -116,6 +139,7 @@ extension SurveyListView: ViewCoding {
         titleConstraints()
         descriptionTitleConstraints()
         userPictureConstraints()
+        gradientOverlayConstraints()
     }
     
     private func backgroundImageConstraints() {
@@ -176,5 +200,9 @@ extension SurveyListView: ViewCoding {
             userPicture.centerYAnchor.constraint(equalTo: title.centerYAnchor),
             userPicture.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
         ])
+    }
+    
+    private func gradientOverlayConstraints() {
+        gradientOverlay.constraintToSuperView()
     }
 }

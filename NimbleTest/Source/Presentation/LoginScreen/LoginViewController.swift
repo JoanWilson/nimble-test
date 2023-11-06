@@ -51,7 +51,9 @@ public final class LoginViewController: UIViewController {
     }
     
     private func navigateToSurveyList() {
-        let surveyListViewController = SurveyListViewController()
+        let surveyUseCase = SurveyRepository(session: .shared)
+        let viewModel = SurveyListViewModel(surveyUseCase: surveyUseCase)
+        let surveyListViewController = SurveyListViewController(viewModel: viewModel)
         navigationController?.pushViewController(surveyListViewController, 
                                                  animated: true)
     }
