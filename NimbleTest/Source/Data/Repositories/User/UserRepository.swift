@@ -1,7 +1,6 @@
 import Foundation
-import KeychainSwift
 
-public final class SurveyRepository {
+public final class UserRepository: UserUseCase {
     public var baseURL = URL(string: "https://survey-api.nimblehq.co")!
     
     private let session: HTTPSessionProtocol
@@ -10,8 +9,8 @@ public final class SurveyRepository {
         self.session = session
     }
     
-    func loadSurveys() async throws -> Result<SurveyData, RepositoryError> {
-        let endpoint = APIEndpoint.surveys
+    func loadUserData() async throws -> Result<UserData, RepositoryError> {
+        let endpoint = APIEndpoint.me
         let url = endpoint.url(for: baseURL)
         var request = URLRequest(url: url)
         
@@ -32,12 +31,12 @@ public final class SurveyRepository {
             return .failure(.requestFailed)
         }
         
-        let surveyData = try JSONDecoder().decode(SurveyData.self, from: data)
-        return .success(surveyData)
+        let userData = try JSONDecoder().decode(UserData.self, from: data)
+        return .success(userData)
     }
 }
 
-extension SurveyRepository {
+extension UserRepository {
     
     @_disfavoredOverload
     public convenience init(session: URLSession = .shared) {

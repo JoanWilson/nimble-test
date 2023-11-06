@@ -6,10 +6,10 @@ public struct LoginSuccess: Codable {
 
 struct LoginSuccessData: Codable {
     let id, type: String?
-    let attributes: Attributes?
+    let attributes: LoginAttributes?
 }
 
-struct Attributes: Codable {
+struct LoginAttributes: Codable {
     let accessToken, tokenType: String?
     let expiresIn: Int?
     let refreshToken: String?
