@@ -30,7 +30,7 @@ public final class SurveyListView: UIView {
     public lazy var userPicture: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "Images/userPic")
+        imageView.image = UIImage()
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 17
@@ -50,7 +50,7 @@ public final class SurveyListView: UIView {
     public lazy var backgroundImage: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "Images/surveyBackground")
+        imageView.image = UIImage()
         imageView.contentMode = .scaleAspectFill
         
         return imageView
@@ -60,7 +60,7 @@ public final class SurveyListView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 28, weight: .bold)
-        label.text = "Working from home Check-In"
+        label.text = ""
         label.textColor = .white
         label.numberOfLines = 2
         
@@ -71,7 +71,7 @@ public final class SurveyListView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 17, weight: .regular)
-        label.text = "We would like to know how you feel about our work from home..."
+        label.text = ""
         label.textColor = .lightGray
         label.numberOfLines = 2
         label.textAlignment = .justified
