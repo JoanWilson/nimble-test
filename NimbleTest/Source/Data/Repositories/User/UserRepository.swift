@@ -9,7 +9,7 @@ public final class UserRepository: UserUseCase {
         self.session = session
     }
     
-    func loadUserData() async throws -> Result<UserData, RepositoryError> {
+    func loadUserData() async throws -> Result<User, RepositoryError> {
         let endpoint = APIEndpoint.me
         let url = endpoint.url(for: baseURL)
         var request = URLRequest(url: url)
@@ -31,7 +31,10 @@ public final class UserRepository: UserUseCase {
             return .failure(.requestFailed)
         }
         
-        let userData = try JSONDecoder().decode(UserData.self, from: data)
+        let userData = try JSONDecoder().decode(User.self, from: data)
+        
+        print(userData)
+        
         return .success(userData)
     }
 }
