@@ -7,7 +7,25 @@
 		<key>NimbleTest.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>3</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>852A16B52AF5AFD10026FA4A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>852A16CB2AF5AFD30026FA4A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>852A16D52AF5AFD30026FA4A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
