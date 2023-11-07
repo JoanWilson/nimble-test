@@ -34,13 +34,32 @@ public final class SurveyListViewController: UIViewController {
         loadingView.modalTransitionStyle = .crossDissolve
         loadingView.modalPresentationStyle = .overCurrentContext
         present(loadingView, animated: true) {
-            self.viewModel.fetchSurveyrs()
+            Task {
+                do {
+                    
+                    try await self.viewModel.fetchSurveyrs()
+                } catch let error {
+                    print(error)
+                }
+            }
         }
         navigationController?.delegate = self
     }
     
     private func addBinders() {
         addSurveysBinder()
+        addUserBinder()
+        addIsFetchedBinder()
+    }
+    
+    private func addIsFetchedBinder() {
+        viewModel.$isFetched.sink { isFetched in
+            if isFetched  {
+                DispatchQueue.main.async {
+                    self.loadingView.dismiss()
+                }
+            }
+        }.store(in: &viewModel.cancellable)
     }
     
     private func addSurveysBinder() {
@@ -51,8 +70,15 @@ public final class SurveyListViewController: UIViewController {
                     return
                 }
                 self.contentView.updateView(with: first)
-                self.loadingView.dismiss()
             }
+        }.store(in: &viewModel.cancellable)
+    }
+    
+    private func addUserBinder() {
+        viewModel.$userData.sink { user in
+            guard let userPicString = user?.data.attributes.avatarURL else { return }
+            guard let url = URL(string: userPicString) else { return }
+            self.contentView.userPicture.load(url: url)
         }.store(in: &viewModel.cancellable)
     }
     
